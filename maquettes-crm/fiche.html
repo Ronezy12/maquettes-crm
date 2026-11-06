@@ -5,258 +5,454 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Fiche client · Maquettes Entreprise AR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:#F5F5F7;color:#1D1D1F}
-:root{--bg:#F5F5F7;--surface:#FFFFFF;--fill:#F0F0F3;--fill-2:#F7F7F9;--line:#E5E5EA;--line-strong:#D2D2D7;--ink:#1D1D1F;--ink-2:#3A3A3C;--muted:#6E6E73;--tint:#E8EDFD;--primary:#1D3FBF;--wa:#1A7F45;--danger:#C5221F;--warn:#B25E00;--ok:#1C6B3D;--yellow:#FFC93C}
-*{box-sizing:border-box}
-button,input,select,textarea{font-family:inherit;font-size:inherit}
+body{margin:0;background:#F5F5F7;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;color:#1D1D1F;-webkit-font-smoothing:antialiased}
+a{color:#1D3FBF}a:hover{color:#142C8A}
+button,input,select,textarea{font-family:inherit}
 button{cursor:pointer}
-a{color:var(--primary)}
-button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #4C6EF0;outline-offset:2px}
-.btn{border:0;background:var(--surface);color:var(--ink);border-radius:9px;padding:8px 12px;font-size:13px;font-weight:600;box-shadow:0 0 0 1px var(--line-strong);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none}
-.btn:hover{background:var(--fill-2)}
-.pri{border:0;background:var(--primary);color:#fff;border-radius:9px;padding:9px 14px;font-size:13px;font-weight:700}
-.lab{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
-.wrap{max-width:1180px;margin:0 auto;padding:20px 16px 110px}
-header.top{background:var(--surface);border-bottom:1px solid var(--line)}
-.topin{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:13px;letter-spacing:.02em}
-.brand img{width:28px;height:28px;object-fit:contain}
-.brand b{color:var(--yellow)}
-.crumb{font-size:13px;color:var(--muted)}
-.crumb a{text-decoration:none}
-.sp{flex:1}
-.card{background:var(--surface);border-radius:14px;box-shadow:0 0 0 1px var(--line);padding:18px}
-.hero{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
-.av{width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--primary);font-weight:700;font-size:18px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-h1{margin:0;font-size:24px;letter-spacing:-.01em}
-.meta{font-size:13px;color:var(--muted);margin-top:4px;display:flex;gap:12px;flex-wrap:wrap}
-.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700}
-.dot{width:8px;height:8px;border-radius:50%}
-.acts{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:16px}
-.act{border:0;border-radius:10px;padding:10px 6px;font-size:13px;font-weight:700;background:var(--tint);color:var(--primary)}
-.act.wa{background:#E6F4EC;color:var(--wa)}
-.act:hover{filter:brightness(.97)}
-.grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:16px;margin-top:16px}
-.tabs{display:flex;gap:4px;background:var(--fill);border-radius:10px;padding:3px;margin-bottom:14px;overflow-x:auto}
-.tab{flex:1;border:0;background:transparent;border-radius:8px;padding:8px 10px;font-size:13px;font-weight:600;color:var(--ink-2);white-space:nowrap}
-.tab[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.kv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 18px}
-.kv .k{font-size:12px;color:var(--muted)}
-.kv .v{font-size:14px;font-weight:600;margin-top:2px;word-break:break-word}
-.sec{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
-.sec:first-child{margin-top:0;padding-top:0;border-top:0}
-.sec h3{margin:0 0 12px;font-size:14px}
-select.in,input.in,textarea.in{width:100%;border:1px solid var(--line-strong);border-radius:8px;padding:8px 10px;font-size:13px;color:var(--ink);background:var(--surface)}
-textarea.in{min-height:70px;resize:vertical}
-.tl{display:flex;flex-direction:column}
-.tli{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--fill)}
-.tli:last-child{border-bottom:0}
-.ic{width:28px;height:28px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0;background:var(--fill);color:var(--ink-2)}
-.tli .t{font-size:13px;font-weight:600}
-.tli .s{font-size:12px;color:var(--muted);margin-top:2px}
-.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat div{background:var(--fill-2);border-radius:10px;padding:10px;text-align:center}
-.stat b{display:block;font-size:20px}
-.stat span{font-size:12px;color:var(--muted)}
-.doc{display:flex;align-items:center;gap:10px;padding:10px;border-radius:10px;background:var(--fill-2);margin-bottom:8px;font-size:13px}
-.doc .sp{flex:1}
-.empty{font-size:13px;color:var(--muted);padding:8px 0}
-.next{background:#FFF8E1;border-radius:10px;padding:12px;font-size:13px}
-.next b{display:block;font-size:14px;margin-bottom:2px}
-.late{color:var(--danger);font-weight:700}
-#toast{position:fixed;left:50%;bottom:70px;transform:translateX(-50%);background:#1D1D1F;color:#fff;font-size:13px;font-weight:600;padding:10px 16px;border-radius:999px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:60}
-#toast.on{opacity:1}
+input::placeholder,textarea::placeholder{color:#6E6E73}
+.btn{border:0;background:#fff;color:#1D1D1F;border-radius:8px;padding:7px 12px;font-size:13px;font-weight:600;box-shadow:0 0 0 1px #D2D2D7;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+.btn:hover{background:#F7F7F9}
+.pri{border:0;background:#1D3FBF;color:#fff;border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+.pri:hover{background:#1835A3}
+.card{background:#fff;border-radius:14px;box-shadow:0 0 0 1px #E5E5EA}
+.lab{font-size:11px;font-weight:700;color:#6E6E73;letter-spacing:.05em;text-transform:uppercase}
+.fld{border:0;background:#fff;border-radius:8px;padding:7px 9px;font-size:13px;color:#1D1D1F;box-shadow:0 0 0 2px #1D3FBF;outline:none;width:100%;box-sizing:border-box}
+.fv{border:0;background:transparent;text-align:left;width:100%;padding:5px 8px;margin:0 -8px;border-radius:7px;font-size:13px;display:flex;align-items:center;gap:6px;cursor:text}
+.fv:hover{background:#F2F2F5}
+.fv .pen{opacity:0;margin-left:auto;color:#6E6E73}
+.fv:hover .pen{opacity:1}
+.qa{border:0;background:#F2F2F5;color:#1D1D1F;border-radius:10px;padding:8px 12px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.qa:hover{background:#E8E8ED}
+.mi{border:0;background:transparent;width:100%;text-align:left;padding:8px 10px;border-radius:6px;font-size:13px;color:#1D1D1F}
+.mi:hover{background:#1D3FBF;color:#fff}
+.tab{border:0;background:transparent;padding:12px 4px;margin-right:18px;font-size:14px;font-weight:600;display:inline-flex;gap:6px;align-items:center}
+:root{--c-primary:#1D3FBF;--c-primary-dark:#142C8A;--c-accent:#FFC93C;--c-ink:#1D1D1F;--c-muted:#6E6E73;--c-line:#E5E5EA;--c-bg:#F5F5F7;--c-success:#1C6B3D;--c-danger:#C5221F;--c-wa:#1A7F45;--radius-sm:6px;--radius-md:10px;--radius-lg:14px;--shadow-md:0 14px 36px rgba(0,0,0,.16)}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--c-primary);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+.sticky{position:sticky;top:0;z-index:6}
+.req{color:var(--c-danger);font-weight:800}
+.sug{border:0;background:#fff;width:100%;text-align:left;padding:8px 10px;font-size:13px;border-radius:6px;cursor:pointer}
+.sug:hover{background:#EEF2FD}
+@keyframes arSpin{to{transform:rotate(360deg)}}
+.spin{display:inline-block;width:12px;height:12px;border-radius:50%;border:2px solid rgba(255,255,255,.45);border-top-color:#fff;animation:arSpin .7s linear infinite;vertical-align:-2px;margin-right:6px}
+.mention{color:var(--c-primary);font-weight:700;background:#EEF2FD;border-radius:4px;padding:0 3px}
+@keyframes arPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes arShrink{from{width:100%}to{width:0}}
+@keyframes arFade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 #ar-switch{position:fixed;left:16px;bottom:16px;z-index:50;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(29,29,31,.92);box-shadow:0 10px 30px rgba(0,0,0,.25);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif}
 #ar-switch a{color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px}
 #ar-switch a[aria-current]{background:#FFC93C;color:#1D1D1F}
 #ar-switch a:focus-visible{outline:3px solid #4C6EF0;outline-offset:2px}
 #ar-demo{position:fixed;right:16px;bottom:16px;z-index:50;font:600 11px -apple-system,system-ui,sans-serif;color:#6E6E73;background:rgba(255,255,255,.92);border-radius:999px;padding:6px 10px;box-shadow:0 0 0 1px #E5E5EA}
-@media (max-width:860px){.grid{grid-template-columns:1fr}.acts{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:520px){.kv{grid-template-columns:1fr}#ar-switch{left:8px;right:8px;overflow-x:auto}#ar-demo{display:none}}
+@media (max-width:640px){#ar-switch{left:8px;right:8px;overflow-x:auto}#ar-demo{display:none}}
 </style>
 </head>
 <body>
-<header class="top"><div class="topin">
-  <a class="btn" id="back" href="tableau.html">‹ Retour</a>
-  <div class="brand"><img src="logo.png" alt=""><span>ENTREPRISE A<b>R</b></span></div>
-  <div class="crumb"><a href="tableau.html">Prospects</a> › <span id="crumbName">Fiche client</span></div>
-  <div class="sp"></div>
-  <button class="btn" id="prev" title="Fiche précédente">‹ Préc.</button>
-  <button class="btn" id="next" title="Fiche suivante">Suiv. ›</button>
-</div></header>
-
-<main class="wrap" id="app"><div class="card empty">Chargement de la fiche…</div></main>
-
-<div id="toast" role="status" aria-live="polite"></div>
+<div id="app"></div>
 <nav id="ar-switch" aria-label="Changer de maquette"><a href="index.html">‹ Accueil</a><a href="tableau.html">Tableau</a><a href="file.html">File de traitement</a><a href="planning.html">Planning des relances</a><a href="#" aria-current="page">Fiche client</a></nav>
 <div id="ar-demo">Maquette · données fictives</div>
-
+<script>window.AR_TPL = [["div", {"style": "min-height: 1760px; position: relative; display: flex; flex-direction: column;"}, [["sc-if", {"value": "{{anyMenu}}", "hint-placeholder-val": "{{false}}"}, [["button", {"onclick": "{{closeMenu}}", "aria-label": "Fermer le menu", "tabindex": "-1", "style": "position: absolute; inset: 0; z-index: 7; border: 0; background: transparent; cursor: default;"}, []]]], ["header", {"class": "sticky", "style": "background: rgba(255,255,255,.96); border-bottom: 1px solid #E5E5EA; display: flex; align-items: center; gap: 12px; padding: 10px 24px; flex-wrap: wrap;"}, [["a", {"href": "tableau.html", "class": "btn", "style": "text-decoration: none;"}, ["‹ Liste des prospects"]], ["nav", {"aria-label": "Fil d’Ariane", "style": "font-size: 13px; color: #6E6E73;"}, ["Clients & prospects › ", ["b", {"style": "color: #1D1D1F;"}, ["{{p.fullName}}"]]]], ["span", {"style": "font-size: 12px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{p.sBg}}; color: {{p.sFg}};"}, ["{{p.statusLabel}}"]], ["sc-if", {"value": "{{hasPresence}}", "hint-placeholder-val": "{{false}}"}, [["span", {"style": "display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #5B2E99; background: #F1EAFB; border-radius: 999px; padding: 3px 10px 3px 4px;"}, [["span", {"style": "width: 20px; height: 20px; border-radius: 50%; background: #5B2E99; color: #fff; font-size: 10px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;"}, ["LA"]], "{{presence}}"]]]], ["span", {"style": "margin-left: auto; display: inline-flex; gap: 6px;"}, [["button", {"class": "qa", "style": "background: var(--c-primary); color: #fff; padding: 7px 12px;"}, ["Appeler"]], ["button", {"class": "qa", "onclick": "{{goWa}}", "style": "background: var(--c-wa); color: #fff; padding: 7px 12px;"}, ["WhatsApp"]], ["button", {"class": "qa", "onclick": "{{goDevis}}", "style": "padding: 7px 12px;"}, ["+ Devis"]]]], ["span", {"style": "position: relative; display: inline-flex;"}, [["button", {"onclick": "{{toggleNotif}}", "aria-label": "Notifications", "aria-expanded": "{{notifOpen}}", "class": "qa", "style": "padding: 7px 10px; position: relative;"}, [["svg", {"width": "16", "height": "16", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2", "aria-hidden": "true"}, [["path", {"d": "M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"}, []], ["path", {"d": "M10.3 21a1.9 1.9 0 0 0 3.4 0"}, []]]], ["sc-if", {"value": "{{hasUnread}}", "hint-placeholder-val": "{{true}}"}, [["span", {"style": "position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; border-radius: 999px; background: var(--c-danger); color: #fff; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;"}, ["{{unread}}"]]]]]], ["sc-if", {"value": "{{notifOpen}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "position: absolute; right: 0; top: 44px; z-index: 8; width: 340px; background: #fff; border-radius: 12px; box-shadow: var(--shadow-md), 0 0 0 1px #E5E5EA; padding: 8px;"}, [["div", {"class": "lab", "style": "padding: 6px 8px;"}, ["Pour toi"]], ["sc-for", {"list": "{{notifs}}", "as": "n", "hint-placeholder-count": "2"}, [["div", {"style": "display: flex; gap: 10px; padding: 8px; border-radius: 8px; background: {{n.bg}};"}, [["span", {"style": "width: 28px; height: 28px; border-radius: 50%; background: #F1EAFB; color: #5B2E99; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"}, ["{{n.ini}}"]], ["div", {"style": "font-size: 13px;"}, [["b", {}, ["{{n.who}}"]], " {{n.text}}", ["div", {"style": "font-size: 11px; color: #6E6E73; margin-top: 2px;"}, ["{{n.when}}"]]]]]]]]]]]]]], ["span", {"style": "font-size: 12px; color: #6E6E73;"}, ["{{posLabel}}"]], ["div", {"style": "display: inline-flex; gap: 4px;"}, [["button", {"class": "btn", "onclick": "{{prevP}}", "aria-label": "Prospect précédent", "style": "padding: 7px 10px;"}, ["‹"]], ["button", {"class": "btn", "onclick": "{{nextP}}", "aria-label": "Prospect suivant", "style": "padding: 7px 10px;"}, ["›"]]]]]], ["main", {"style": "padding: 20px 24px 40px; display: flex; flex-direction: column; gap: 16px; animation: arFade .2s ease-out;"}, [["section", {"class": "card", "style": "padding: 18px 20px; display: flex; flex-direction: column; gap: 16px;"}, [["div", {"style": "display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap;"}, [["span", {"style": "width: 64px; height: 64px; border-radius: 18px; background: #1D3FBF; color: #FFC93C; font-weight: 800; font-size: 22px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"}, ["{{p.initials}}"]], ["div", {"style": "flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 6px;"}, [["div", {"style": "display: flex; align-items: center; gap: 10px; flex-wrap: wrap;"}, [["h1", {"style": "margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -.01em;"}, ["{{p.fullName}}"]], ["select", {"value": "{{p.status}}", "onchange": "{{onStatus}}", "aria-label": "Statut", "style": "appearance: none; -webkit-appearance: none; border: 0; border-radius: 999px; padding: 5px 26px 5px 12px; font-size: 13px; font-weight: 700; cursor: pointer; background-color: {{p.sBg}}; color: {{p.sFg}}; background-image: {{p.caret}}; background-repeat: no-repeat; background-position: right 10px center; background-size: 8px 5px;"}, [["sc-for", {"list": "{{statusOptions}}", "as": "o", "hint-placeholder-count": "5"}, [["option", {"value": "{{o.key}}"}, ["{{o.label}}"]]]]]], ["sc-for", {"list": "{{p.badges}}", "as": "b", "hint-placeholder-count": "2"}, [["span", {"style": "font-size: 12px; font-weight: 700; border-radius: 6px; padding: 3px 8px; background: {{b.bg}}; color: {{b.fg}};"}, ["{{b.label}}"]]]]]], ["div", {"style": "font-size: 13px; color: #6E6E73; display: flex; gap: 14px; flex-wrap: wrap;"}, [["span", {}, ["Fiche #{{p.id}}"]], ["span", {}, ["{{p.place}}"]], ["span", {}, ["Source : {{p.source}}"]], ["span", {}, ["Commercial : {{p.owner}}"]], ["span", {}, ["Créée le {{p.created}}"]]]]]], ["div", {"style": "display: flex; gap: 6px; flex-wrap: wrap; align-items: center; position: relative;"}, [["button", {"class": "qa", "style": "background: #1D3FBF; color: #fff;"}, [["svg", {"width": "15", "height": "15", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2.2", "aria-hidden": "true"}, [["path", {"d": "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"}, []]]], "Appeler"]], ["button", {"class": "qa", "onclick": "{{goWa}}", "style": "background: #1A7F45; color: #fff;"}, [["svg", {"width": "15", "height": "15", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2.2", "aria-hidden": "true"}, [["path", {"d": "M21 12a9 9 0 0 1-13.5 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12Z"}, []]]], "WhatsApp"]], ["button", {"class": "qa"}, ["Mail"]], ["button", {"class": "qa"}, ["SMS"]], ["button", {"class": "qa", "onclick": "{{goRdv}}"}, ["Planifier un RDV"]], ["button", {"class": "pri", "onclick": "{{goDevis}}", "style": "padding: 9px 14px;"}, ["+ Créer un devis"]], ["button", {"class": "qa", "onclick": "{{toggleMenu}}", "aria-label": "Plus d’actions", "aria-expanded": "{{menuOpen}}", "style": "padding: 8px 10px;"}, ["⋯"]], ["sc-if", {"value": "{{menuOpen}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "position: absolute; right: 0; top: 44px; z-index: 8; background: #fff; border-radius: 10px; box-shadow: 0 14px 36px rgba(0,0,0,.16), 0 0 0 1px #E5E5EA; padding: 6px; width: 300px;"}, [["sc-for", {"list": "{{menuItems}}", "as": "m", "hint-placeholder-count": "8"}, [["button", {"class": "mi", "onclick": "{{m.act}}", "style": "color: {{m.color}};"}, ["{{m.label}}"]]]]]]]]]]]], ["ol", {"aria-label": "Avancement", "style": "list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px;"}, [["sc-for", {"list": "{{steps}}", "as": "s", "hint-placeholder-count": "7"}, [["li", {}, [["button", {"onclick": "{{s.pick}}", "aria-current": "{{s.current}}", "style": "width: 100%; border: 0; background: transparent; padding: 0; text-align: left; display: flex; flex-direction: column; gap: 6px;"}, [["span", {"style": "display: block; height: 6px; border-radius: 3px; background: {{s.bar}};"}, []], ["span", {"style": "font-size: 12px; font-weight: {{s.weight}}; color: {{s.fg}};"}, ["{{s.label}}"]]]]]]]]]], ["div", {"style": "display: flex; align-items: center; gap: 12px; background: {{p.nextBg}}; border-radius: 12px; padding: 10px 14px; flex-wrap: wrap;"}, [["span", {"style": "width: 30px; height: 30px; border-radius: 50%; background: #fff; color: {{p.dueC}}; display: inline-flex; align-items: center; justify-content: center;"}, [["svg", {"width": "15", "height": "15", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2.2", "aria-hidden": "true"}, [["circle", {"cx": "12", "cy": "12", "r": "9"}, []], ["path", {"d": "M12 7v5l3 2"}, []]]]]], ["div", {"style": "flex-grow: 1;"}, [["div", {"class": "lab"}, ["Prochaine action"]], ["div", {"style": "font-size: 15px; font-weight: 700;"}, ["{{p.next}} ", ["span", {"style": "font-size: 13px; color: {{p.dueC}}; font-weight: 700;"}, ["· {{p.dueTxt}}"]]]]]], ["button", {"class": "pri", "onclick": "{{nextDone}}"}, ["✓ Fait"]], ["sc-for", {"list": "{{postpone}}", "as": "x", "hint-placeholder-count": "3"}, [["button", {"class": "btn", "onclick": "{{x.pick}}"}, ["{{x.label}}"]]]]]]]], ["section", {"aria-label": "Avant d’appeler", "style": "display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;"}, [["sc-for", {"list": "{{brief}}", "as": "b", "hint-placeholder-count": "3"}, [["div", {"class": "card", "style": "padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; box-shadow: 0 0 0 1px {{b.ring}}; background: {{b.bg}};"}, [["span", {"style": "width: 28px; height: 28px; border-radius: 8px; background: {{b.iconBg}}; color: {{b.iconFg}}; font-size: 12px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;"}, ["{{b.n}}"]], ["div", {"style": "min-width: 0;"}, [["div", {"class": "lab"}, ["{{b.title}}"]], ["div", {"style": "font-size: 14px; font-weight: 600; margin-top: 2px;"}, ["{{b.text}}"]], ["div", {"style": "font-size: 12px; color: #6E6E73; margin-top: 2px;"}, ["{{b.sub}}"]]]]]]]]]], ["div", {"style": "display: flex; gap: 16px; align-items: flex-start; flex-wrap: wrap;"}, [["aside", {"style": "flex: 1 1 320px; max-width: 380px; display: flex; flex-direction: column; gap: 16px;"}, [["sc-if", {"value": "{{hasDups}}", "hint-placeholder-val": "{{false}}"}, [["section", {"style": "background: #FFF7EC; border-radius: 14px; box-shadow: 0 0 0 1px #F5D3A6; padding: 12px 14px; display: flex; align-items: center; gap: 10px;"}, [["span", {"style": "width: 28px; height: 28px; border-radius: 50%; background: #FFE3BF; color: #8A4300; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;"}, ["{{dupCount}}"]], ["div", {"style": "flex-grow: 1; font-size: 13px;"}, [["b", {}, ["{{dupLabel}}"]], ["div", {"style": "color: #8A4300; font-size: 12px;"}, ["Même téléphone ou même nom"]]]], ["button", {"class": "btn", "onclick": "{{showDups}}", "style": "padding: 6px 10px;"}, ["Voir"]], ["button", {"class": "pri", "onclick": "{{mergeDups}}", "style": "padding: 6px 10px; background: #8A4300;"}, ["Fusionner"]]]]]], ["section", {"class": "card", "style": "padding: 14px 16px;"}, [["div", {"style": "display: flex; align-items: center; gap: 8px;"}, [["b", {"style": "font-size: 14px;"}, ["Fiche remplie"]], ["span", {"style": "margin-left: auto; font-size: 18px; font-weight: 800; color: {{fillC}};"}, ["{{fillPct}}"]]]], ["div", {"style": "height: 8px; border-radius: 4px; background: #E8E8ED; margin: 8px 0 10px;"}, [["div", {"style": "width: {{fillPct}}; height: 8px; border-radius: 4px; background: {{fillC}}; transition: width .3s;"}, []]]], ["div", {"style": "display: flex; flex-wrap: wrap; gap: 6px;"}, [["sc-for", {"list": "{{missing}}", "as": "m", "hint-placeholder-count": "4"}, [["button", {"onclick": "{{m.edit}}", "style": "border: 0; background: #FDECEC; color: #A1262B; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600;"}, ["+ {{m.label}}"]]]], ["sc-if", {"value": "{{complete}}", "hint-placeholder-val": "{{false}}"}, [["span", {"style": "font-size: 13px; color: #1C6B3D; font-weight: 600;"}, ["Tout est rempli"]]]]]]]], ["section", {"class": "card", "style": "padding: 14px 16px;"}, [["div", {"class": "lab", "style": "margin-bottom: 8px;"}, ["Type de demande"]], ["div", {"style": "display: flex; flex-wrap: wrap; gap: 6px;"}, [["sc-for", {"list": "{{demandes}}", "as": "d", "hint-placeholder-count": "6"}, [["button", {"onclick": "{{d.toggle}}", "aria-pressed": "{{d.on}}", "style": "border: 0; border-radius: 8px; padding: 6px 10px; font-size: 12px; font-weight: 600; background: {{d.bg}}; color: {{d.fg}}; box-shadow: 0 0 0 1px {{d.ring}};"}, ["{{d.label}}"]]]]]]]], ["sc-for", {"list": "{{infoGroups}}", "as": "g", "hint-placeholder-count": "4"}, [["section", {"class": "card", "style": "padding: 14px 16px;"}, [["div", {"style": "display: flex; align-items: center; margin-bottom: 4px;"}, [["button", {"onclick": "{{g.collapse}}", "aria-expanded": "{{g.open}}", "style": "flex-grow: 1; border: 0; background: transparent; padding: 6px 0; text-align: left; display: flex; align-items: center; gap: 8px; min-height: 32px;"}, [["span", {"style": "display: inline-block; transform: rotate({{g.rot}}); transition: transform .15s; color: #6E6E73;"}, ["›"]], ["span", {"class": "lab"}, ["{{g.title}}"]], ["sc-if", {"value": "{{g.hasMissingReq}}", "hint-placeholder-val": "{{false}}"}, [["span", {"style": "font-size: 11px; font-weight: 700; color: #fff; background: var(--c-danger); border-radius: 999px; padding: 0 7px;"}, ["{{g.missingReq}}"]]]], ["span", {"style": "margin-left: auto; font-size: 11px; color: #6E6E73;"}, ["{{g.summary}}"]]]], ["sc-if", {"value": "{{g.hasToggle}}", "hint-placeholder-val": "{{false}}"}, [["button", {"onclick": "{{g.toggle}}", "style": "border: 0; background: transparent; color: #1D3FBF; font-size: 12px; font-weight: 600;"}, ["{{g.toggleLabel}}"]]]]]], ["sc-if", {"value": "{{g.hint}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "font-size: 12px; color: #6E6E73; margin-bottom: 6px;"}, ["{{g.hintText}}"]]]], ["sc-if", {"value": "{{g.open}}", "hint-placeholder-val": "{{true}}"}, [["sc-for", {"list": "{{g.fields}}", "as": "f", "hint-placeholder-count": "5"}, [["div", {"style": "display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 34px;"}, [["span", {"style": "font-size: 12px; color: #6E6E73;"}, ["{{f.label}}", ["sc-if", {"value": "{{f.req}}", "hint-placeholder-val": "{{false}}"}, [["span", {"class": "req", "title": "Champ obligatoire"}, [" *"]]]]]], ["div", {}, [["sc-if", {"value": "{{f.isRo}}", "hint-placeholder-val": "{{false}}"}, [["span", {"style": "font-size: 13px; color: #3A3A3C; padding: 5px 0; display: block;"}, ["{{f.text}}"]]]], ["sc-if", {"value": "{{f.isView}}", "hint-placeholder-val": "{{true}}"}, [["button", {"class": "fv", "onclick": "{{f.edit}}", "title": "Cliquer pour modifier", "style": "color: {{f.color}}; font-weight: {{f.weight}}; box-shadow: inset 0 0 0 1px {{f.reqRing}};"}, [["span", {"style": "overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"}, ["{{f.text}}"]], ["svg", {"class": "pen", "width": "12", "height": "12", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2.2", "aria-hidden": "true"}, [["path", {"d": "M4 20h4L19 9l-4-4L4 16z"}, []]]]]]]], ["sc-if", {"value": "{{f.isInput}}", "hint-placeholder-val": "{{false}}"}, [["input", {"class": "fld", "value": "{{draft}}", "onchange": "{{onDraft}}", "onkeydown": "{{onDraftKey}}", "onblur": "{{commit}}", "autofocus": "{{f.isInput}}", "aria-label": "{{f.label}}", "placeholder": "{{f.ph}}"}, []], ["sc-if", {"value": "{{f.hasSugg}}", "hint-placeholder-val": "{{false}}"}, [["div", {"role": "listbox", "aria-label": "Adresses proposées", "style": "margin-top: 4px; background: #fff; border-radius: 8px; box-shadow: var(--shadow-md); padding: 4px;"}, [["sc-for", {"list": "{{f.sugg}}", "as": "a", "hint-placeholder-count": "3"}, [["button", {"role": "option", "class": "sug", "onmousedown": "{{a.pick}}"}, [["b", {}, ["{{a.l1}}"]], ["span", {"style": "display: block; font-size: 11px; color: #6E6E73;"}, ["{{a.l2}}"]]]]]]]]]]]], ["sc-if", {"value": "{{f.isSelect}}", "hint-placeholder-val": "{{false}}"}, [["select", {"class": "fld", "value": "{{f.value}}", "onchange": "{{f.onSelect}}", "onblur": "{{cancelEdit}}", "autofocus": "{{f.isSelect}}", "aria-label": "{{f.label}}"}, [["option", {"value": ""}, ["—"]], ["sc-for", {"list": "{{f.opts}}", "as": "o", "hint-placeholder-count": "4"}, [["option", {"value": "{{o}}"}, ["{{o}}"]]]]]]]]]]]]]]]]]]]]]], ["section", {"class": "card", "style": "flex: 999 1 520px; min-width: 0; overflow: hidden;"}, [["div", {"role": "tablist", "aria-label": "Sections de la fiche", "style": "display: flex; flex-wrap: wrap; padding: 0 18px; border-bottom: 1px solid #ECECF0;"}, [["sc-for", {"list": "{{tabs}}", "as": "t", "hint-placeholder-count": "7"}, [["button", {"role": "tab", "class": "tab", "aria-selected": "{{t.on}}", "onclick": "{{t.pick}}", "style": "color: {{t.fg}}; box-shadow: inset 0 -2px 0 {{t.line}};"}, ["{{t.label}}", ["sc-if", {"value": "{{t.hasCount}}", "hint-placeholder-val": "{{false}}"}, [["span", {"style": "font-size: 11px; font-weight: 700; background: {{t.cBg}}; color: {{t.cFg}}; border-radius: 999px; padding: 1px 7px;"}, ["{{t.count}}"]]]]]]]], ["span", {"style": "position: relative; margin-left: auto; display: inline-flex; align-items: center;"}, [["button", {"class": "tab", "onclick": "{{toggleMore}}", "aria-expanded": "{{moreOpen}}", "style": "color: {{moreFg}}; box-shadow: inset 0 -2px 0 {{moreLine}}; margin-right: 0;"}, ["{{moreLabel}} ▾"]], ["sc-if", {"value": "{{moreOpen}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "position: absolute; right: 0; top: 44px; z-index: 8; background: #fff; border-radius: 10px; box-shadow: 0 14px 36px rgba(0,0,0,.16), 0 0 0 1px #E5E5EA; padding: 6px; width: 260px;"}, [["sc-for", {"list": "{{moreItems}}", "as": "m", "hint-placeholder-count": "9"}, [["button", {"class": "mi", "onclick": "{{m.pick}}"}, ["{{m.label}}"]]]]]]]]]]]], ["div", {"style": "padding: 18px; display: flex; flex-direction: column; gap: 14px;"}, [["sc-if", {"value": "{{tAct}}", "hint-placeholder-val": "{{true}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 14px;"}, [["div", {"style": "border-radius: 12px; box-shadow: 0 0 0 1px #E0E0E5; overflow: hidden;"}, [["div", {"role": "tablist", "aria-label": "Type d’activité", "style": "display: flex; gap: 4px; padding: 8px; background: #F7F7F9;"}, [["sc-for", {"list": "{{kinds}}", "as": "k", "hint-placeholder-count": "4"}, [["button", {"role": "tab", "aria-selected": "{{k.on}}", "onclick": "{{k.pick}}", "style": "border: 0; border-radius: 7px; padding: 5px 12px; font-size: 13px; font-weight: 600; background: {{k.bg}}; color: {{k.fg}}; box-shadow: {{k.shadow}};"}, ["{{k.label}}"]]]]]], ["textarea", {"rows": "3", "value": "{{note}}", "onchange": "{{onNote}}", "placeholder": "{{notePh}}", "aria-label": "Nouvelle activité", "style": "display: block; width: 100%; box-sizing: border-box; border: 0; padding: 12px 14px; font-size: 14px; resize: vertical; outline: none;"}, []], ["sc-if", {"value": "{{hasMentionSugg}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; gap: 6px; flex-wrap: wrap; align-items: center; padding: 0 12px 8px;"}, [["span", {"style": "font-size: 12px; color: #6E6E73;"}, ["Mentionner :"]], ["sc-for", {"list": "{{mentionSugg}}", "as": "m", "hint-placeholder-count": "3"}, [["button", {"onclick": "{{m.pick}}", "style": "border: 0; background: #EEF2FD; color: var(--c-primary); border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700;"}, ["@{{m.name}} ", ["span", {"style": "font-weight: 500; color: #4A5A9A;"}, ["{{m.role}}"]]]]]]]]]], ["div", {"style": "display: flex; justify-content: flex-end; align-items: center; gap: 8px; padding: 8px 10px; border-top: 1px solid #F0F0F3;"}, [["span", {"style": "margin-right: auto; font-size: 12px; color: #6E6E73;"}, ["{{draftInfo}}"]], ["sc-if", {"value": "{{isCallKind}}", "hint-placeholder-val": "{{false}}"}, [["sc-for", {"list": "{{callResults}}", "as": "c", "hint-placeholder-count": "3"}, [["button", {"class": "btn", "onclick": "{{c.pick}}", "style": "padding: 6px 10px;"}, ["{{c.label}}"]]]]]], ["button", {"class": "pri", "onclick": "{{addNote}}", "style": "background: {{noteBtn.bg}}; min-width: 150px;"}, [["sc-if", {"value": "{{noteBtn.loading}}", "hint-placeholder-val": "{{false}}"}, [["span", {"class": "spin"}, []]]], "{{noteBtn.label}}"]]]]]], ["div", {"style": "display: flex; gap: 6px; flex-wrap: wrap;"}, [["sc-for", {"list": "{{tlFilters}}", "as": "x", "hint-placeholder-count": "5"}, [["button", {"onclick": "{{x.pick}}", "style": "border: 0; border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 600; background: {{x.bg}}; color: {{x.fg}}; box-shadow: 0 0 0 1px {{x.ring}};"}, ["{{x.label}}"]]]]]], ["ol", {"style": "list-style: none; margin: 0; padding: 0;"}, [["sc-for", {"list": "{{timeline}}", "as": "e", "hint-placeholder-count": "6"}, [["li", {"style": "display: flex; gap: 12px;"}, [["div", {"style": "display: flex; flex-direction: column; align-items: center;"}, [["span", {"style": "width: 32px; height: 32px; border-radius: 10px; background: {{e.bg}}; color: {{e.fg}}; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;"}, ["{{e.tag}}"]], ["span", {"style": "width: 2px; flex-grow: 1; background: #ECECF0; margin: 4px 0;"}, []]]], ["div", {"style": "flex-grow: 1; padding-bottom: 16px; min-width: 0;"}, [["div", {"style": "font-size: 12px; color: #6E6E73;"}, [["b", {"style": "color: #1D1D1F;"}, ["{{e.who}}"]], " · {{e.when}}"]], ["div", {"style": "font-size: 14px; margin-top: 2px;"}, ["{{e.text}}"]], ["sc-if", {"value": "{{e.hasMentions}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "font-size: 12px; color: var(--c-primary); font-weight: 600; margin-top: 3px;"}, ["Notifié : {{e.mentions}}"]]]]]]]]]]]]]]]], ["sc-if", {"value": "{{tChantier}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 14px;"}, [["div", {"style": "display: flex; align-items: center; gap: 8px; flex-wrap: wrap;"}, [["b", {"style": "font-size: 15px;"}, ["Chantier"]], ["span", {"style": "font-size: 12px; font-weight: 700; background: #EEF2FD; color: #1D3FBF; border-radius: 6px; padding: 3px 8px;"}, ["Réf. {{chantier.ref}}"]], ["button", {"onclick": "{{togglePaid}}", "style": "border: 0; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700; background: {{chantier.paidBg}}; color: {{chantier.paidFg}};"}, ["{{chantier.paidLabel}}"]], ["span", {"style": "margin-left: auto; display: flex; gap: 6px;"}, [["button", {"class": "btn", "onclick": "{{printChantier}}"}, ["Imprimer"]], ["button", {"class": "pri", "onclick": "{{validateChantier}}", "style": "background: #1C6B3D;"}, ["{{chantier.validLabel}}"]]]]]], ["div", {"style": "display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;"}, [["sc-for", {"list": "{{chantier.totals}}", "as": "t", "hint-placeholder-count": "4"}, [["div", {"style": "border-radius: 12px; background: {{t.bg}}; padding: 12px;"}, [["div", {"style": "font-size: 12px; color: {{t.fg2}}; font-weight: 600;"}, ["{{t.label}}"]], ["div", {"style": "font-size: 20px; font-weight: 800; color: {{t.fg}};"}, ["{{t.value}}"]]]]]]]], ["label", {"style": "display: flex; flex-direction: column; gap: 6px;"}, [["span", {"class": "lab"}, ["Interventions réalisées"]], ["select", {"value": "", "onchange": "{{addInterv}}", "aria-label": "Ajouter une intervention", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 8px 10px; font-size: 13px;"}, [["option", {"value": ""}, ["+ Ajouter une intervention réalisée…"]], ["sc-for", {"list": "{{intervOpts}}", "as": "o", "hint-placeholder-count": "5"}, [["option", {"value": "{{o}}"}, ["{{o}}"]]]]]]]], ["div", {"style": "display: flex; flex-wrap: wrap; gap: 6px;"}, [["sc-for", {"list": "{{chantier.interv}}", "as": "i", "hint-placeholder-count": "2"}, [["span", {"style": "display: inline-flex; align-items: center; gap: 4px; background: #E3F4EA; color: #1C6B3D; border-radius: 6px; padding: 4px 4px 4px 9px; font-size: 12px; font-weight: 600;"}, ["{{i.label}}", ["button", {"onclick": "{{i.remove}}", "aria-label": "Retirer", "style": "border: 0; background: transparent; color: #1C6B3D; font-size: 14px; padding: 0 4px;"}, ["×"]]]]]]]], ["label", {"style": "display: flex; flex-direction: column; gap: 6px;"}, [["span", {"class": "lab"}, ["Observations éventuelles"]], ["textarea", {"rows": "4", "placeholder": "Observations du technicien ou du bureau…", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 10px; padding: 10px; font-size: 13px; resize: vertical;"}, []]]]]]]], ["sc-if", {"value": "{{tMails}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 10px;"}, [["div", {"style": "display: flex; gap: 8px;"}, [["button", {"class": "pri", "onclick": "{{newMail}}"}, ["+ Nouveau mail"]], ["span", {"style": "font-size: 12px; color: #6E6E73; align-self: center;"}, ["Envoyé depuis contact@entreprise-ar.fr"]]]], ["sc-for", {"list": "{{mails}}", "as": "m", "hint-placeholder-count": "2"}, [["div", {"style": "display: flex; gap: 12px; padding: 12px 14px; border-radius: 12px; box-shadow: 0 0 0 1px #E5E5EA; align-items: center;"}, [["span", {"style": "font-size: 11px; font-weight: 800; border-radius: 6px; padding: 3px 7px; background: {{m.bg}}; color: {{m.fg}};"}, ["{{m.dir}}"]], ["div", {"style": "flex-grow: 1; min-width: 0;"}, [["div", {"style": "font-size: 14px; font-weight: 600;"}, ["{{m.subject}}"]], ["div", {"style": "font-size: 12px; color: #6E6E73;"}, ["{{m.when}}"]]]], ["button", {"class": "btn", "onclick": "{{m.act}}"}, ["Ouvrir"]]]]]]]]]], ["sc-if", {"value": "{{tSav}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 10px;"}, [["div", {"style": "display: flex; gap: 8px;"}, [["button", {"class": "pri", "onclick": "{{newSav}}"}, ["+ Nouvelle demande de SAV"]]]], ["sc-for", {"list": "{{savs}}", "as": "v", "hint-placeholder-count": "1"}, [["div", {"style": "display: flex; gap: 12px; padding: 12px 14px; border-radius: 12px; box-shadow: 0 0 0 1px #E5E5EA; align-items: center;"}, [["div", {"style": "flex-grow: 1;"}, [["div", {"style": "font-size: 14px; font-weight: 600;"}, ["{{v.title}}"]], ["div", {"style": "font-size: 12px; color: #6E6E73;"}, ["{{v.info}}"]]]], ["span", {"style": "font-size: 12px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: #FFF1E0; color: #8A4300;"}, ["{{v.statut}}"]]]]]], ["sc-if", {"value": "{{noSav}}", "hint-placeholder-val": "{{true}}"}, [["div", {"style": "padding: 26px; text-align: center; color: #6E6E73; font-size: 14px; border-radius: 12px; border: 2px dashed #E0E0E5;"}, ["Aucune demande de SAV."]]]]]]]], ["sc-if", {"value": "{{tMore}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 10px;"}, [["b", {"style": "font-size: 15px;"}, ["{{more.title}}"]], ["div", {"style": "font-size: 13px; color: #6E6E73;"}, ["{{more.desc}}"]], ["sc-for", {"list": "{{more.rows}}", "as": "r", "hint-placeholder-count": "3"}, [["div", {"style": "display: flex; gap: 12px; padding: 10px 14px; border-radius: 10px; box-shadow: 0 0 0 1px #E5E5EA; align-items: center; font-size: 13px;"}, [["b", {"style": "flex-grow: 1;"}, ["{{r.a}}"]], ["span", {"style": "color: #6E6E73;"}, ["{{r.b}}"]], ["span", {"style": "font-weight: 600; color: #1D3FBF;"}, ["{{r.c}}"]]]]]]]]]], ["sc-if", {"value": "{{tDevis}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 10px;"}, [["div", {"style": "display: flex; gap: 8px; flex-wrap: wrap;"}, [["button", {"class": "pri", "onclick": "{{newDevis}}"}, ["+ Nouveau devis"]], ["button", {"class": "btn", "onclick": "{{importCsv}}"}, ["Import CSV (lignes Rexel)"]], ["button", {"class": "btn", "onclick": "{{orderRexel}}"}, ["Commande Rexel"]], ["button", {"class": "btn", "onclick": "{{signDoc}}"}, ["Envoyer en signature"]], ["button", {"class": "btn", "onclick": "{{fromVisit}}"}, ["Créer depuis le compte rendu de visite"]]]], ["sc-for", {"list": "{{devis}}", "as": "d", "hint-placeholder-count": "2"}, [["div", {"style": "display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 12px; box-shadow: 0 0 0 1px #E5E5EA; flex-wrap: wrap;"}, [["div", {"style": "flex-grow: 1; min-width: 160px;"}, [["div", {"style": "display: flex; align-items: center; gap: 8px;"}, [["b", {"style": "font-size: 15px;"}, ["{{d.n}}"]], ["span", {"style": "font-size: 12px; font-weight: 700; border-radius: 999px; padding: 2px 9px; background: {{d.sBg}}; color: {{d.sFg}};"}, ["{{d.statut}}"]]]], ["div", {"style": "font-size: 12px; color: #6E6E73; margin-top: 2px;"}, ["{{d.info}}"]], ["sc-if", {"value": "{{d.hasTrack}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "font-size: 12px; font-weight: 600; color: #6B4A00; margin-top: 4px;"}, ["{{d.track}}"]]]]]], ["div", {"style": "font-size: 18px; font-weight: 800;"}, ["{{d.montant}} ", ["span", {"style": "font-size: 11px; color: #6E6E73; font-weight: 600;"}, ["TTC"]]]], ["div", {"style": "display: flex; gap: 6px;"}, [["button", {"class": "btn", "onclick": "{{d.act}}"}, ["Voir"]], ["button", {"class": "btn", "onclick": "{{d.relance}}"}, ["Relancer"]], ["button", {"class": "btn", "onclick": "{{d.act}}"}, ["Dupliquer"]]]]]]]], ["sc-if", {"value": "{{noDevis}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "padding: 30px; text-align: center; color: #6E6E73; font-size: 14px; border-radius: 12px; border: 2px dashed #E0E0E5;"}, ["Aucun devis pour l’instant."]]]]]]]], ["sc-if", {"value": "{{tRdv}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 10px;"}, [["div", {"style": "background: #F7F8FC; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px;"}, [["b", {"style": "font-size: 13px;"}, ["Ajouter un rendez-vous"]], ["div", {"style": "display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; align-items: end;"}, [["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Type"]], ["select", {"class": "fld", "value": "{{rdvType}}", "onchange": "{{onRdvType}}", "style": "box-shadow: 0 0 0 1px #D2D2D7;"}, [["sc-for", {"list": "{{rdvTypes}}", "as": "t", "hint-placeholder-count": "5"}, [["option", {"value": "{{t}}"}, ["{{t}}"]]]]]]]], ["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Date"]], ["input", {"class": "fld", "type": "date", "value": "{{rdvDate}}", "onchange": "{{onRdvDate}}", "style": "box-shadow: 0 0 0 1px #D2D2D7;"}, []]]], ["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Heure"]], ["input", {"class": "fld", "type": "time", "value": "{{rdvHour}}", "onchange": "{{onRdvHour}}", "style": "box-shadow: 0 0 0 1px #D2D2D7;"}, []]]], ["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Durée"]], ["select", {"class": "fld", "value": "{{rdvDur}}", "onchange": "{{onRdvDur}}", "style": "box-shadow: 0 0 0 1px #D2D2D7;"}, [["option", {}, ["1 heure"]], ["option", {}, ["2 heures"]], ["option", {}, ["3 heures"]], ["option", {}, ["Demi-journée"]], ["option", {}, ["Journée"]]]]]], ["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Créneau"]], ["select", {"class": "fld", "value": "{{rdvSlot}}", "onchange": "{{onRdvSlot}}", "style": "box-shadow: 0 0 0 1px #D2D2D7;"}, [["option", {}, ["7 h – 10 h"]], ["option", {}, ["10 h – 13 h"]], ["option", {}, ["13 h – 16 h"]], ["option", {}, ["16 h – 19 h"]]]]]], ["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Technicien"]], ["select", {"class": "fld", "value": "{{rdvTech}}", "onchange": "{{onRdvTech}}", "style": "box-shadow: 0 0 0 1px #D2D2D7;"}, [["sc-for", {"list": "{{techs}}", "as": "t", "hint-placeholder-count": "4"}, [["option", {"value": "{{t}}"}, ["{{t}}"]]]]]]]]]], ["div", {"style": "display: flex; gap: 8px; flex-wrap: wrap;"}, [["button", {"class": "pri", "onclick": "{{addRdv}}", "style": "background: {{rdvBtn.bg}}; min-width: 150px;"}, [["sc-if", {"value": "{{rdvBtn.loading}}", "hint-placeholder-val": "{{false}}"}, [["span", {"class": "spin"}, []]]], "{{rdvBtn.label}}"]], ["button", {"class": "btn", "onclick": "{{showDispo}}"}, ["Afficher les disponibilités"]], ["label", {"style": "display: inline-flex; align-items: center; gap: 6px; font-size: 13px;"}, [["input", {"type": "checkbox", "checked": "{{rdvPlanB}}", "onchange": "{{togglePlanB}}"}, []], " Ranger dans le Planning B"]]]]]], ["sc-for", {"list": "{{rdvs}}", "as": "r", "hint-placeholder-count": "2"}, [["div", {"style": "display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 12px; box-shadow: 0 0 0 1px #E5E5EA; flex-wrap: wrap;"}, [["div", {"style": "background: #EEF2FD; color: #1D3FBF; border-radius: 10px; padding: 6px 10px; text-align: center; font-weight: 800; line-height: 1.1; min-width: 44px;"}, [["div", {"style": "font-size: 18px;"}, ["{{r.day}}"]], ["div", {"style": "font-size: 11px;"}, ["{{r.month}}"]]]], ["div", {"style": "flex-grow: 1;"}, [["div", {"style": "font-size: 14px; font-weight: 700;"}, ["{{r.type}} · {{r.tech}}"]], ["div", {"style": "font-size: 12px; color: #6E6E73;"}, ["{{r.info}}"]]]], ["span", {"style": "font-size: 12px; font-weight: 700; border-radius: 999px; padding: 3px 10px; background: {{r.sBg}}; color: {{r.sFg}};"}, ["{{r.etat}}"]], ["button", {"class": "btn", "onclick": "{{r.act}}"}, ["{{r.btn}}"]]]]]]]]]], ["sc-if", {"value": "{{tDocs}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 12px;"}, [["button", {"onclick": "{{addDoc}}", "style": "border: 2px dashed #C9D5F7; background: #F7F9FF; border-radius: 12px; padding: 22px; color: #1D3FBF; font-size: 14px; font-weight: 600;"}, ["Glisser des fichiers ici ou cliquer pour ajouter (photos, PDF…)"]], ["div", {"style": "display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;"}, [["sc-for", {"list": "{{docs}}", "as": "d", "hint-placeholder-count": "4"}, [["div", {"style": "border-radius: 12px; box-shadow: 0 0 0 1px #E5E5EA; overflow: hidden;"}, [["div", {"style": "height: 90px; background: {{d.bg}}; color: {{d.fg}}; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 800;"}, ["{{d.ext}}"]], ["div", {"style": "padding: 8px 10px;"}, [["div", {"style": "font-size: 12px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"}, ["{{d.name}}"]], ["div", {"style": "font-size: 11px; color: #6E6E73;"}, ["{{d.from}}"]]]]]]]]]], ["div", {"style": "display: flex; gap: 8px; flex-wrap: wrap;"}, [["button", {"class": "btn", "onclick": "{{askPhotos}}"}, ["Demander des photos par WhatsApp"]], ["button", {"class": "btn", "onclick": "{{sendDocsTech}}"}, ["Envoyer au technicien"]], ["button", {"class": "btn", "onclick": "{{signDoc}}"}, ["Signatures de documents"]], ["button", {"class": "btn", "onclick": "{{toDrive}}"}, ["Ajouter au Drive photos"]]]]]]]], ["sc-if", {"value": "{{tWa}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; box-shadow: 0 0 0 1px #E5E5EA;"}, [["div", {"style": "display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 10px 12px; border-bottom: 1px solid #ECECF0;"}, [["select", {"value": "{{waStatus}}", "onchange": "{{onWaStatus}}", "aria-label": "Statut de la conversation", "style": "border: 0; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 700; background: #FFF4D1; color: #6B4A00;"}, [["sc-for", {"list": "{{waStatuses}}", "as": "o", "hint-placeholder-count": "5"}, [["option", {"value": "{{o}}"}, ["{{o}}"]]]]]], ["button", {"class": "btn", "onclick": "{{waPhotos}}", "style": "padding: 5px 9px; font-size: 12px;"}, ["Photos → fiche"]], ["button", {"class": "btn", "onclick": "{{waReminder}}", "style": "padding: 5px 9px; font-size: 12px;"}, ["Rappel"]], ["button", {"class": "btn", "onclick": "{{goAct}}", "style": "padding: 5px 9px; font-size: 12px;"}, ["Commentaires"]], ["button", {"class": "btn", "onclick": "{{waReload}}", "style": "padding: 5px 9px; font-size: 12px;"}, ["Rafraîchir"]], ["button", {"class": "btn", "onclick": "{{waFull}}", "style": "padding: 5px 9px; font-size: 12px;"}, ["Plein écran ↗"]]]], ["div", {"style": "background: #E3F4EA; color: #1C6B3D; font-size: 12px; font-weight: 600; padding: 6px 12px;"}, ["Fenêtre de 24 h ouverte : message libre possible. Sinon, utilise un modèle approuvé par Meta."]], ["div", {"style": "background: #EFEAE2; padding: 14px; display: flex; flex-direction: column; gap: 8px; min-height: 260px;"}, [["sc-for", {"list": "{{waMsgs}}", "as": "m", "hint-placeholder-count": "3"}, [["div", {"style": "align-self: {{m.align}}; max-width: 75%; background: {{m.bg}}; border-radius: 10px; padding: 8px 10px; font-size: 13px; box-shadow: 0 1px 1px rgba(0,0,0,.08);"}, ["{{m.text}}", ["div", {"style": "font-size: 10px; color: #6E6E73; text-align: right; margin-top: 2px;"}, ["{{m.when}}"]]]]]]]], ["div", {"style": "padding: 10px 12px; display: flex; flex-direction: column; gap: 8px;"}, [["div", {"style": "display: flex; gap: 6px; flex-wrap: wrap;"}, [["sc-for", {"list": "{{waTpls}}", "as": "t", "hint-placeholder-count": "4"}, [["button", {"onclick": "{{t.use}}", "style": "border: 0; background: #E3F7E9; color: #1C6B3D; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600;"}, ["{{t.label}}"]]]]]], ["div", {"style": "display: flex; align-items: center; gap: 8px; background: #EEF2FD; border-radius: 8px; padding: 6px 10px; font-size: 12px;"}, [["span", {"style": "color: #1D3FBF; font-weight: 700;"}, ["Modèle conseillé :"]], ["code", {"style": "font-family: inherit; font-weight: 700;"}, ["{{waSuggest.name}}"]], ["span", {"style": "color: #6E6E73;"}, ["{{waSuggest.why}}"]], ["button", {"onclick": "{{waSuggest.use}}", "style": "margin-left: auto; border: 0; background: var(--c-primary); color: #fff; border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 700;"}, ["Utiliser"]]]], ["select", {"value": "", "onchange": "{{onWaTpl}}", "aria-label": "Modèle approuvé", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 7px 10px; font-size: 13px;"}, [["option", {"value": ""}, ["Modèle approuvé Meta (33)…"]], ["sc-for", {"list": "{{metaTpls}}", "as": "o", "hint-placeholder-count": "6"}, [["option", {"value": "{{o}}"}, ["{{o}}"]]]]]], ["div", {"style": "display: flex; gap: 8px;"}, [["button", {"class": "btn", "onclick": "{{waAttach}}", "aria-label": "Joindre un document", "style": "padding: 8px 10px;"}, [["svg", {"width": "15", "height": "15", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2", "aria-hidden": "true"}, [["path", {"d": "m21 11-8.5 8.5a5 5 0 0 1-7-7L14 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L15 7"}, []]]]]], ["input", {"value": "{{wa}}", "onchange": "{{onWa}}", "placeholder": "Écrire un message…", "aria-label": "Message WhatsApp", "style": "flex-grow: 1; border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 9px 10px; font-size: 13px;"}, []], ["button", {"class": "btn", "onclick": "{{waFix}}", "title": "Corriger l’orthographe (IA)", "style": "padding: 8px 10px; font-size: 12px;"}, ["Corriger"]], ["button", {"class": "btn", "onclick": "{{waRephrase}}", "title": "Reformuler (IA)", "style": "padding: 8px 10px; font-size: 12px;"}, ["Reformuler"]], ["button", {"onclick": "{{sendWa}}", "style": "border: 0; background: {{waBtn.bg}}; color: #fff; border-radius: 8px; padding: 8px 16px; font-weight: 700; font-size: 13px; min-width: 100px;"}, [["sc-if", {"value": "{{waBtn.loading}}", "hint-placeholder-val": "{{false}}"}, [["span", {"class": "spin"}, []]]], "{{waBtn.label}}"]]]]]]]]]], ["sc-if", {"value": "{{tFact}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "padding: 30px; text-align: center; color: #6E6E73; font-size: 14px; border-radius: 12px; border: 2px dashed #E0E0E5;"}, [" Aucune facture. Une facture se crée depuis un devis signé. ", ["div", {"style": "margin-top: 12px;"}, [["button", {"class": "btn", "onclick": "{{goDevisTab}}"}, ["Voir les devis"]]]]]]]], ["sc-if", {"value": "{{tAvis}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 12px;"}, [["div", {"style": "display: flex; align-items: center; gap: 12px;"}, [["span", {"style": "font-size: 28px; letter-spacing: 2px; color: #E0A800;"}, ["{{stars}}"]], ["span", {"style": "font-size: 14px; color: #6E6E73;"}, ["{{avisInfo}}"]]]], ["div", {"style": "display: flex; gap: 8px; flex-wrap: wrap;"}, [["button", {"class": "pri", "onclick": "{{sendAvis}}"}, ["Envoyer le lien avis Google (WhatsApp)"]], ["button", {"class": "btn", "onclick": "{{sendAvisMail}}"}, ["Par mail"]]]]]]]]]]]], ["aside", {"style": "flex: 1 1 260px; max-width: 300px; display: flex; flex-direction: column; gap: 16px;"}, [["section", {"class": "card", "style": "padding: 14px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;"}, [["sc-for", {"list": "{{stats}}", "as": "k", "hint-placeholder-count": "4"}, [["button", {"onclick": "{{k.go}}", "style": "border: 0; background: #F7F7F9; border-radius: 10px; padding: 10px; text-align: left;"}, [["span", {"style": "display: block; font-size: 11px; color: #6E6E73; font-weight: 600;"}, ["{{k.label}}"]], ["span", {"style": "display: block; font-size: 20px; font-weight: 800; color: {{k.color}};"}, ["{{k.value}}"]]]]]]]], ["section", {"class": "card", "style": "padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;"}, [["div", {"style": "display: flex; align-items: center;"}, [["span", {"class": "lab", "style": "flex-grow: 1;"}, ["Tâches de l’équipe"]], ["span", {"style": "font-size: 12px; color: #6E6E73;"}, ["{{tasksLeft}}"]]]], ["sc-for", {"list": "{{tasks}}", "as": "t", "hint-placeholder-count": "2"}, [["label", {"style": "display: flex; gap: 8px; align-items: flex-start; padding: 6px 0; border-bottom: 1px solid #F0F0F3; cursor: pointer; min-height: 32px;"}, [["input", {"type": "checkbox", "checked": "{{t.done}}", "onchange": "{{t.toggle}}", "style": "margin-top: 3px; width: 16px; height: 16px;"}, []], ["span", {"style": "flex-grow: 1; min-width: 0;"}, [["span", {"style": "display: block; font-size: 13px; font-weight: 600; text-decoration: {{t.deco}}; color: {{t.color}};"}, ["{{t.text}}"]], ["span", {"style": "display: block; font-size: 11px; color: {{t.dueC}};"}, ["{{t.who}} · {{t.dueTxt}}"]]]]]]]], ["input", {"value": "{{taskDraft}}", "onchange": "{{onTaskDraft}}", "placeholder": "Nouvelle tâche…", "aria-label": "Nouvelle tâche", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 8px 10px; font-size: 13px;"}, []], ["div", {"style": "display: flex; gap: 6px;"}, [["select", {"value": "{{taskWho}}", "onchange": "{{onTaskWho}}", "aria-label": "Assigner à", "style": "flex: 1; border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 6px 8px; font-size: 12px;"}, [["sc-for", {"list": "{{team}}", "as": "m", "hint-placeholder-count": "4"}, [["option", {"value": "{{m}}"}, ["{{m}}"]]]]]], ["select", {"value": "{{taskDue}}", "onchange": "{{onTaskDue}}", "aria-label": "Échéance", "style": "flex: 1; border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 6px 8px; font-size: 12px;"}, [["option", {"value": "0"}, ["Aujourd’hui"]], ["option", {"value": "1"}, ["Demain"]], ["option", {"value": "3"}, ["Dans 3 jours"]], ["option", {"value": "7"}, ["Dans 1 semaine"]]]]]], ["button", {"class": "pri", "onclick": "{{addTask}}", "style": "opacity: {{taskOpacity}};"}, ["Assigner la tâche"]]]], ["section", {"class": "card", "style": "padding: 14px 16px;"}, [["div", {"class": "lab", "style": "margin-bottom: 8px;"}, ["Prochain RDV"]], ["div", {"style": "font-size: 15px; font-weight: 700;"}, ["{{nextRdv.title}}"]], ["div", {"style": "font-size: 13px; color: #6E6E73;"}, ["{{nextRdv.sub}}"]], ["button", {"class": "btn", "onclick": "{{goRdv}}", "style": "margin-top: 10px; width: 100%;"}, ["Gérer les RDV"]]]], ["section", {"class": "card", "style": "padding: 14px 16px;"}, [["div", {"class": "lab", "style": "margin-bottom: 8px;"}, ["Équipe sur la fiche"]], ["sc-for", {"list": "{{teamCard}}", "as": "m", "hint-placeholder-count": "3"}, [["div", {"style": "display: flex; align-items: center; gap: 10px; padding: 5px 0;"}, [["span", {"style": "width: 28px; height: 28px; border-radius: 50%; background: {{m.bg}}; color: {{m.fg}}; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; justify-content: center;"}, ["{{m.ini}}"]], ["div", {}, [["div", {"style": "font-size: 13px; font-weight: 600;"}, ["{{m.name}}"]], ["div", {"style": "font-size: 11px; color: #6E6E73;"}, ["{{m.role}}"]]]]]]]]]], ["section", {"class": "card", "style": "padding: 14px 16px;"}, [["div", {"class": "lab", "style": "margin-bottom: 8px;"}, ["Étiquettes"]], ["div", {"style": "display: flex; flex-wrap: wrap; gap: 6px;"}, [["sc-for", {"list": "{{tags}}", "as": "t", "hint-placeholder-count": "3"}, [["button", {"onclick": "{{t.toggle}}", "aria-pressed": "{{t.on}}", "style": "border: 0; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600; background: {{t.bg}}; color: {{t.fg}};"}, ["{{t.label}}"]]]]]]]]]]]]]], ["sc-if", {"value": "{{askNext}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "position: absolute; inset: 0; z-index: 20; background: rgba(16,16,20,.32); display: flex; justify-content: center; align-items: flex-start; padding-top: 160px;"}, [["div", {"role": "dialog", "aria-modal": "true", "aria-label": "Prochaine action", "style": "background: #fff; border-radius: 16px; width: 460px; box-shadow: 0 24px 60px rgba(0,0,0,.25); padding: 20px; display: flex; flex-direction: column; gap: 12px; animation: arPop .2s ease-out;"}, [["b", {"style": "font-size: 17px;"}, ["Quelle est la prochaine action ?"]], ["div", {"style": "font-size: 13px; color: #6E6E73;"}, ["Statut passé à ", ["b", {"style": "color: #1D1D1F;"}, ["{{askNextStatus}}"]], ". Chaque prospect doit avoir une suite prévue."]], ["div", {"style": "display: flex; gap: 6px; flex-wrap: wrap;"}, [["sc-for", {"list": "{{nextIdeas}}", "as": "i", "hint-placeholder-count": "3"}, [["button", {"onclick": "{{i.pick}}", "style": "border: 0; background: #F0F0F3; border-radius: 999px; padding: 5px 10px; font-size: 12px; font-weight: 600;"}, ["{{i.label}}"]]]]]], ["label", {"style": "display: flex; flex-direction: column; gap: 4px;"}, [["span", {"class": "lab"}, ["Action"]], ["input", {"value": "{{nextDraft}}", "onchange": "{{onNextDraft}}", "placeholder": "Ex. : rappeler pour fixer la prévisite", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 9px 10px; font-size: 14px;"}, []]]], ["div", {"style": "display: flex; gap: 6px; align-items: center; flex-wrap: wrap;"}, [["sc-for", {"list": "{{nextDates}}", "as": "d", "hint-placeholder-count": "4"}, [["button", {"onclick": "{{d.pick}}", "style": "border: 0; border-radius: 8px; padding: 7px 10px; font-size: 12px; font-weight: 700; background: {{d.bg}}; color: {{d.fg}};"}, ["{{d.label}}"]]]], ["input", {"type": "date", "value": "{{nextDate}}", "onchange": "{{onNextDate}}", "aria-label": "Date", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 6px 8px; font-size: 13px;"}, []]]], ["div", {"style": "display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px;"}, [["button", {"class": "btn", "onclick": "{{cancelNext}}"}, ["Annuler le changement de statut"]], ["button", {"class": "pri", "onclick": "{{saveNext}}", "disabled": "{{nextInvalid}}", "style": "opacity: {{nextOpacity}};"}, ["Enregistrer"]]]]]]]]]], ["sc-if", {"value": "{{askDelete}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "position: absolute; inset: 0; z-index: 20; background: rgba(16,16,20,.32); display: flex; justify-content: center; align-items: flex-start; padding-top: 180px;"}, [["div", {"role": "alertdialog", "aria-modal": "true", "aria-label": "Supprimer la fiche", "style": "background: #fff; border-radius: 16px; width: 420px; box-shadow: 0 24px 60px rgba(0,0,0,.25); padding: 20px; display: flex; flex-direction: column; gap: 10px; animation: arPop .2s ease-out;"}, [["b", {"style": "font-size: 17px; color: var(--c-danger);"}, ["Supprimer la fiche {{p.fullName}} ?"]], ["div", {"style": "font-size: 13px; color: #3A3A3C;"}, ["La fiche part dans la Corbeille et peut être restaurée. Pour confirmer, tape le nom ", ["b", {}, ["{{p.nomUpper}}"]], "."]], ["input", {"value": "{{delDraft}}", "onchange": "{{onDelDraft}}", "aria-label": "Nom du client pour confirmer", "placeholder": "{{p.nomUpper}}", "style": "border: 0; box-shadow: 0 0 0 1px #D2D2D7; border-radius: 8px; padding: 9px 10px; font-size: 14px;"}, []], ["div", {"style": "display: flex; gap: 8px; justify-content: flex-end;"}, [["button", {"class": "btn", "onclick": "{{cancelDelete}}"}, ["Annuler"]], ["button", {"onclick": "{{confirmDelete}}", "disabled": "{{delInvalid}}", "style": "border: 0; background: var(--c-danger); color: #fff; border-radius: 8px; padding: 8px 14px; font-weight: 700; font-size: 13px; opacity: {{delOpacity}};"}, ["Mettre à la corbeille"]]]]]]]]]], ["sc-if", {"value": "{{hasToast}}", "hint-placeholder-val": "{{false}}"}, [["div", {"role": "status", "aria-live": "polite", "style": "position: absolute; top: 70px; left: 0; right: 0; margin: 0 auto; width: max-content; z-index: 30; animation: arPop .22s ease-out;"}, [["div", {"style": "background: #fff; border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.18), 0 0 0 1px #E5E5EA; min-width: 320px; overflow: hidden;"}, [["div", {"style": "display: flex; align-items: center; gap: 12px; padding: 12px 14px;"}, [["span", {"style": "width: 28px; height: 28px; border-radius: 50%; background: #E3F4EA; color: #1C6B3D; display: inline-flex; align-items: center; justify-content: center;"}, [["svg", {"width": "15", "height": "15", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "3", "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true"}, [["path", {"d": "m5 12 5 5 9-10"}, []]]]]], ["div", {"style": "flex-grow: 1;"}, [["div", {"style": "font-size: 14px; font-weight: 600;"}, ["Modification enregistrée"]], ["div", {"style": "font-size: 13px; color: #6E6E73;"}, ["{{toastText}}"]]]], ["sc-if", {"value": "{{toastUndo}}", "hint-placeholder-val": "{{false}}"}, [["button", {"onclick": "{{undo}}", "style": "border: 0; background: #F0F0F3; color: var(--c-primary); border-radius: 8px; padding: 6px 10px; font-weight: 700; font-size: 13px;"}, ["Annuler"]]]]]], ["div", {"style": "height: 3px; background: #F0F0F3;"}, [["div", {"style": "height: 3px; background: #1C6B3D; animation: arShrink 3s linear forwards;"}, []]]]]]]]]]]]];</script>
+<script src="runtime.js"></script>
 <script>
-(function () {
-  'use strict';
-  var MO = ['ENTREPRISE AR', 'VENTURA ÉNERGIE', 'RAPHELEC', 'JLE SERVICES', 'R2M SERVICES', 'AVENIR RENOV'];
-  var OWNERS = ['Aharon', 'Raphael', 'Laura', 'Mick'];
-  var REG = { 'Hauts-de-France': ['02','59','60','62','80'], 'Auvergne-Rhône-Alpes': ['01','03','07','15','26','38','42','43','63','69','73'], 'Occitanie': ['09','11','12','30','31','32','34','46','65','66','82'], 'Île-de-France': ['75','77','78','91','92','93','94','95'], 'Normandie': ['27','76'], 'Centre-Val de Loire': ['28','41','45'], 'Bourgogne-Franche-Comté': ['71'] };
-  var NOW = '2026-11-03';
-  var app = document.getElementById('app');
-  var D = [], ST = [], INFO = {}, cur = null, tab = 'infos', notes = {};
-
-  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
-  function fmtD(s) { return s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(2, 4) : '—'; }
-  function dd(a, b) { return Math.round((Date.parse(a) - Date.parse(b)) / 86400000); }
-  function regionOf(cp) { var d = (cp || '').slice(0, 2); var r = Object.keys(REG).filter(function (k) { return REG[k].indexOf(d) >= 0; })[0]; return r || 'Autre'; }
-  function toast(t) { var el = document.getElementById('toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.remove('on'); }, 2200); }
-  function grab(src, name) {
-    var a = src.indexOf('const ' + name);
-    if (a < 0) throw new Error('bloc ' + name + ' introuvable');
-    var s = src.indexOf('[', a), depth = 0, i = s, q = null;
-    for (; i < src.length; i++) {
-      var c = src[i];
-      if (q) { if (c === '\\') { i++; continue; } if (c === q) q = null; continue; }
-      if (c === "'" || c === '"' || c === '`') { q = c; continue; }
-      if (c === '[') depth++;
-      else if (c === ']') { depth--; if (depth === 0) break; }
-    }
-    return Function('"use strict";return (' + src.slice(s, i + 1) + ');')();
+const NOW = '2026-11-03';
+const pad = n => (n < 10 ? '0' : '') + n;
+const addDays = (s, n) => { const t = new Date(Date.parse(s) + n * 86400000); return t.getUTCFullYear() + '-' + pad(t.getUTCMonth() + 1) + '-' + pad(t.getUTCDate()); };
+const dd = (a, b) => Math.round((Date.parse(a) - Date.parse(b)) / 86400000);
+const fmtD = s => s ? s.slice(8, 10) + '/' + s.slice(5, 7) + '/' + s.slice(2, 4) : '';
+const MONTHS = ['JANV', 'FÉVR', 'MARS', 'AVR', 'MAI', 'JUIN', 'JUIL', 'AOÛT', 'SEPT', 'OCT', 'NOV', 'DÉC'];
+const ST = [['traiter', 'À traiter', '#D93025'], ['encours', 'En cours de traitement', '#D93025'], ['nrp', 'NRP – message laissé', '#E8710A'], ['rappeler', 'À rappeler', '#E8710A'], ['video', 'Appel vidéo demandé', '#E8710A'],
+  ['attente', 'En attente retour client', '#E8710A'], ['revenir', 'Client qui doit revenir vers nous', '#E8710A'], ['achat', 'Projet d’achat', '#E8710A'], ['placer', 'À placer', '#1E8E3E'], ['donner', 'Donner au tech', '#1E8E3E'],
+  ['rdv', 'RDV pris', '#1E8E3E'], ['rdvtech', 'RDV pris par le technicien', '#1E8E3E'], ['replan', 'Replanifier', '#1E8E3E'], ['devis', 'Devis à faire', '#1D3FBF'], ['jeter', 'Appeler pour jeter', '#8E8E93'], ['ko', 'KO', '#8E8E93']];
+const PILL = { '#D93025': ['#FDECEC', '#A1262B'], '#E8710A': ['#FFF1E0', '#8A4300'], '#1E8E3E': ['#E3F4EA', '#1C6B3D'], '#1D3FBF': ['#E8EDFD', '#1D3FBF'], '#8E8E93': ['#F0F0F3', '#48484A'] };
+const INFO = {}; ST.forEach(s => { INFO[s[0]] = { label: s[1], pill: PILL[s[2]] }; });
+const caret = c => 'url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 width=%278%27 height=%275%27><path d=%27M0 0l4 5 4-5z%27 fill=%27' + encodeURIComponent(c) + '%27/></svg>")';
+const STEPS = ['Nouveau', 'Contacté', 'RDV / visite', 'Devis envoyé', 'Signé', 'Travaux', 'Facturé'];
+const TECHS = ['Eliel Dahan', 'Altelec 31', 'Pro Elec 45', 'Mickael Melloul', 'EGK 63', 'Crea’elec'];
+// Champs de la fiche (repris du CRM) : clé, libellé, groupe, liste de choix (null = texte, 'ro' = lecture seule), compte dans le remplissage
+const G_CLASS = 'Classement', G_CONTACT = 'Contact', G_ADR = 'Adresse du chantier', G_OCC = 'Occupation & urgence', G_PROP = 'Propriétaire (si locataire)', G_DATES = 'Dates';
+const FIELDS = [
+  ['mo', 'Maître d’œuvre', G_CLASS, ['ENTREPRISE AR', 'VENTURA ÉNERGIE', 'RAPHELEC', 'JLE SERVICES', 'R2M SERVICES', 'AVENIR RENOV'], false],
+  ['typeClient', 'Type client', G_CLASS, ['Prospect', 'Devis', 'Facture', 'Archivé', 'Client'], false],
+  ['source', 'Statut appel entrant', G_CLASS, ['Aucun', 'LOCAL SERVICE', 'LOCAL SERVICE auvergne rhone', 'LOCAL SERVICE occitanie', 'Parrainage', 'Recommandation', 'Landing page', 'Site internet'], true],
+  ['canal', 'Source', G_CLASS, ['Appel entrant', 'Facebook'], false],
+  ['campagne', 'Campagne', G_CLASS, null, false],
+  ['owner', 'Commercial sédentaire', G_CLASS, ['Aharon', 'Raphael', 'Laura', 'Mick', 'David Ventura', 'Rudy'], false],
+  ['tech', 'Installateur', G_CLASS, null, false],
+  ['civilite', 'Civilité', G_CONTACT, ['M', 'Mme', 'M et Mme'], false],
+  ['prenom', 'Prénom', G_CONTACT, null, true], ['nom', 'Nom', G_CONTACT, null, true], ['raison', 'Raison sociale', G_CONTACT, null, false],
+  ['tel', 'Tél. principal', G_CONTACT, null, true], ['tel2', 'Tél. secondaire', G_CONTACT, null, false],
+  ['email', 'E-mail 1', G_CONTACT, null, true], ['email2', 'E-mail 2', G_CONTACT, null, false],
+  ['adresse', 'Adresse', G_ADR, null, true], ['complement', 'Compl. adresse', G_ADR, null, false], ['cp', 'Code postal', G_ADR, null, true], ['ville', 'Ville', G_ADR, null, true],
+  ['insee', 'Code INSEE', G_ADR, 'ro', false], ['dept', 'Département', G_ADR, 'ro', false], ['zone', 'Zone', G_ADR, ['Île-de-France', 'Hauts-de-France', 'Auvergne-Rhône-Alpes', 'Occitanie', 'Normandie', 'Centre-Val de Loire', 'Autre'], true],
+  ['nature', 'Nature occupation', G_OCC, ['Propriétaire', 'Locataire', 'En cours d’acquisition'], true],
+  ['urgence', 'Urgence', G_OCC, ['Immédiat (plus d’électricité)', 'Sous 24 à 48 h', 'Cette semaine', 'Pas urgent, simple devis'], true],
+  ['pCiv', 'Civilité', G_PROP, ['M', 'Mme', 'M et Mme'], false], ['pPrenom', 'Prénom', G_PROP, null, false], ['pNom', 'Nom', G_PROP, null, false], ['pTel', 'Téléphone', G_PROP, null, false],
+  ['pEmail', 'E-mail', G_PROP, null, false], ['pAdresse', 'Adresse', G_PROP, null, false], ['pCp', 'Code postal', G_PROP, null, false], ['pVille', 'Ville', G_PROP, null, false],
+  ['createdTxt', 'Date création', G_DATES, 'ro', false], ['modifiedTxt', 'Date modif.', G_DATES, 'ro', false]
+];
+const DEMANDES = ['Prise Green’up / Borne de recharge', 'Panne de courant', 'Panne partielle', 'Devis rénovation', 'Petits travaux', 'Devis tableau électrique'];
+const MENU = [['Copier les infos pour le technicien', ''], ['WhatsApp technicien (infos pré-remplies)', ''], ['Lien de paiement SumUp (carte bancaire)', ''], ['Landing page client', ''], ['Envoyer le lien avis Google', ''], ['Dupliquer la fiche', ''], ['Transformer en client', ''], ['Archiver', ''], ['Supprimer la fiche', '#C5221F']];
+const MORE = [
+  ['Localisation', 'Carte du chantier et itinéraire depuis l’agence.', [['Adresse du chantier', 'géolocalisée via le code INSEE', 'Ouvrir la carte']]],
+  ['Clients à proximité', 'Clients déjà équipés autour du chantier (utile pour grouper les interventions).', [['[Client voisin]', 'à 2,4 km', 'Voir'], ['[Client voisin]', 'à 5,1 km', 'Voir']]],
+  ['Techniciens à proximité', 'Techniciens disponibles les plus proches.', [['Eliel Dahan', 'à 6 km', 'Assigner'], ['Mickael Melloul', 'à 14 km', 'Assigner']]],
+  ['Agences fournisseur à proximité', 'Agences Rexel les plus proches pour retirer le matériel.', [['[Agence Rexel]', 'à 3 km', 'Itinéraire']]],
+  ['Entrées / Sorties', 'Matériel sorti du stock pour ce chantier.', [['Aucun mouvement', '', '']]],
+  ['Stocks', 'Matériel réservé pour ce chantier.', [['Aucune réservation', '', '']]],
+  ['Commande Rexel', 'Commandes passées chez Rexel pour ce chantier.', [['Aucune commande', '', 'Nouvelle commande']]],
+  ['Signatures de documents', 'Devis, bons de commande et PV envoyés en signature électronique.', [['Aucun document en attente', '', 'Envoyer un document']]],
+  ['LOG', 'Journal technique des actions sur la fiche.', [['Fiche ouverte', 'Aharon', 'Aujourd’hui']]],
+  ['Audit', 'Historique complet des modifications de champs.', [['Statut RDV prospect modifié', 'Raphael', 'Hier']]]
+];
+const WA_STATUSES = ['Sans statut', 'À traiter', 'En attente client', 'En cours', 'Traité', 'À rappeler', 'Urgence', 'Agent terrain', 'KO', 'N’a pas WA'];
+const META_TPLS = ['apelle_client', 'avis_google_', 'avis_google_1', 'client_avec_son_materiel', 'confirmation_rdv_pris', 'coordonnes_bancaires', 'demande_dun_message', 'devis_lien_jo', 'devis_signe', 'discussion_cloture', 'enregistrement_contact', 'formulaire_recu_client', 'hello_world', 'lancement_de_discussion', 'landing_page', 'lead_site_internet_relance', 'lien_bon_commande', 'lien_de_paiment', 'lien_facture', 'message_bien_recu_2', 'message_manque', 'nos_certifications', 'nos_services', 'parrainage_client', 'qualification_du_client', 'rdv_pour_technicien_', 'refus_stage_alternace', 'refuser_intervention', 'relance_devis_client_qualification', 'relance_documents_en_attente', 'relance_prospects', 'satisfcation_express'];
+const INTERV = ['Remplacement du tableau électrique', 'Pose prise Green’up', 'Pose borne de recharge', 'Mise à la terre', 'Création de circuit', 'Recherche de panne', 'Pose différentiel 30 mA', 'Mise en conformité'];
+const FL = {}; FIELDS.forEach(f => { FL[f[0]] = f; });
+const P0 = [
+  { id: 9626, nom: 'MOMAL', prenom: 'Raphaëlle', tel: '06 27 •• •• 79', email: '', canal: 'WhatsApp', creneau: '', adresse: '', complement: '', cp: '94800', ville: 'Villejuif', acces: '',
+    travaux: 'Rénovation électrique', logement: '', annee: '', surface: '', tableau: '', budget: '', delai: '', owner: 'Raphael', source: 'Landing page', mo: 'ENTREPRISE AR', tech: 'Eliel Dahan',
+    status: 'rdv', step: 2, next: 'Récupérer le compte rendu de visite', due: '2026-11-03', created: '2026-11-02', tags: ['Landing page'],
+    devis: [], rdvs: [{ date: '2026-11-02', type: 'Prévisite', tech: 'Eliel Dahan', etat: 'Réalisée', cr: false }],
+    docs: [['Documents landing page.pdf', 'Landing page']],
+    tl: [['rdv', 'Raphael', 'RDV prévisite confirmé avec Eliel Dahan', '02/11 · 13:41'], ['wa', 'Raphael', 'Modèle WhatsApp « Confirmation RDV » envoyé', '02/11 · 11:02'], ['doc', 'Système', 'Documents ajoutés depuis la landing page', '02/11 · 08:51'], ['new', 'Système', 'Fiche créée depuis la landing page', '02/11 · 08:51']],
+    wa: [['out', 'Bonjour Raphaëlle, votre rendez-vous de prévisite est confirmé. Entreprise AR', '02/11 11:02'], ['in', 'Parfait, merci !', '02/11 11:15']], avis: 0 },
+  { id: 9352, nom: 'DESVIGNE', prenom: '', tel: '06 52 •• •• 48', email: '', canal: 'WhatsApp', creneau: 'Après 18 h', adresse: '', complement: '', cp: '30200', ville: 'Saint-Nazaire', acces: '',
+    travaux: 'Rénovation électrique', logement: 'Maison', annee: '', surface: '', tableau: 'Ancien, à remplacer', budget: '3 000 – 8 000 €', delai: '1 à 3 mois', owner: 'Aharon', source: 'Parrainage', mo: 'ENTREPRISE AR', tech: '',
+    status: 'devis', step: 2, next: 'Envoyer le devis', due: '2026-10-29', created: '2026-10-21', tags: ['Parrainage', 'Prioritaire'],
+    devis: [{ n: 'Brouillon', montant: '[MONTANT]', statut: 'Brouillon', info: 'À finaliser avec les lignes Rexel', ouv: 0 }], rdvs: [],
+    docs: [['Photos du tableau.jpg', 'WhatsApp'], ['Plan du logement.pdf', 'Mail']],
+    tl: [['wa', 'Aharon', '22 messages WhatsApp échangés', '28/10 · 14:03'], ['call', 'Aharon', 'Appel : souhaite un devis complet', '21/10 · 11:20'], ['new', 'Système', 'Fiche créée (parrainage)', '21/10 · 11:13']],
+    wa: [['in', 'Bonjour, je vous envoie les photos du tableau.', '27/10 18:40'], ['out', 'Merci, bien reçu ! Je prépare le devis.', '28/10 09:12']], avis: 0 },
+  { id: 9475, nom: 'VIDAL', prenom: '', tel: '06 52 •• •• 37', email: '', canal: 'Téléphone', creneau: '', adresse: '', complement: '', cp: '09200', ville: 'Eycheil', acces: '',
+    travaux: 'Prise Green’up', logement: 'Maison', annee: '', surface: '', tableau: 'Récent (après 2000)', budget: '< 1 000 €', delai: 'Sous 1 mois', owner: 'Aharon', source: 'Local Services', mo: 'ENTREPRISE AR', tech: '',
+    status: 'encours', step: 3, next: 'Relancer le devis', due: '2026-11-04', created: '2026-10-26', tags: ['Local Services'],
+    devis: [{ n: 'DP[N°]', montant: '[MONTANT]', statut: 'Ouvert 2 fois', info: 'Envoyé le 27/10 · dernière ouverture hier', ouv: 2 }], rdvs: [],
+    docs: [], tl: [['devis', 'Système', 'Devis ouvert par le client (2e fois)', '02/11 · 17:12'], ['devis', 'Aharon', 'Devis envoyé par WhatsApp', '27/10 · 10:36'], ['new', 'Système', 'Fiche créée (Local Services)', '26/10 · 13:29']],
+    wa: [['out', 'Bonjour, voici votre devis pour la prise Green’up. Aharon – Entreprise AR', '27/10 10:36']], avis: 0 }
+];
+const EXTRA = {
+  9626: { canal: 'Appel entrant', zone: 'Île-de-France', urgence: 'Pas urgent, simple devis', demandes: ['Devis rénovation'], dups: 0, chantier: { ref: '[RÉF]', paid: false, valid: false, interv: [] }, mails: [], savs: [], modified: '2026-11-02' },
+  9352: { canal: 'Appel entrant', zone: 'Occitanie', nature: 'Propriétaire', urgence: 'Cette semaine', demandes: ['Devis rénovation', 'Devis tableau électrique'], dups: 0, chantier: { ref: '[RÉF]', paid: false, valid: false, interv: [] },
+    mails: [['Envoyé', 'Votre projet de rénovation électrique', '22/10/26']], savs: [], modified: '2026-10-28' },
+  9475: { canal: 'Appel entrant', source: 'LOCAL SERVICE occitanie', zone: 'Occitanie', nature: 'Locataire', urgence: 'Pas urgent, simple devis', demandes: ['Prise Green’up / Borne de recharge'], dups: 1, chantier: { ref: '[RÉF]', paid: false, valid: false, interv: [] },
+    mails: [['Envoyé', 'Votre devis Entreprise AR', '27/10/26'], ['Reçu', 'RE: Votre devis Entreprise AR', '28/10/26']], savs: [], modified: '2026-10-27' }
+};
+P0.forEach(p => { Object.assign(p, { civilite: '', raison: '', tel2: '', email2: '', insee: '', zone: '', nature: '', urgence: '', typeClient: 'Prospect', campagne: '', pCiv: '', pPrenom: '', pNom: '', pTel: '', pEmail: '', pAdresse: '', pCp: '', pVille: '' }, EXTRA[p.id]);
+  if (p.source === 'Local Services') p.source = 'LOCAL SERVICE'; });
+const REQ = ['civilite', 'prenom', 'nom', 'tel', 'zone'];
+const WA_RULES = [
+  [p => p.chantier.valid, 'avis_google_', 'chantier validé : demander un avis'],
+  [p => p.status === 'rdv' || p.status === 'rdvtech', 'confirmation_rdv_pris', 'un RDV est pris'],
+  [p => p.devis.some(d => d.ouv > 0), 'relance_devis_client_qualification', 'le devis a été ouvert'],
+  [p => p.docs.length === 0, 'relance_documents_en_attente', 'aucune photo reçue'],
+  [p => p.status === 'nrp' || p.status === 'rappeler', 'relance_prospects', 'le client n’a pas répondu'],
+  [p => true, 'lancement_de_discussion', 'premier contact']
+];
+const TEAM = [['Raphael', 'responsable'], ['Laura', 'secrétariat'], ['Mick', 'chef technique'], ['Rudy', 'commercial'], ['Eliel', 'technicien']];
+const TASKS0 = { 9626: [{ text: 'Récupérer le compte rendu de visite auprès d’Eliel', who: 'Raphael', due: '2026-11-03', done: false }],
+  9352: [{ text: 'Envoyer le bon de commande', who: 'Laura', due: '2026-11-04', done: false }, { text: 'Vérifier les prix Rexel du devis', who: 'Aharon', due: '2026-11-02', done: false }], 9475: [] };
+P0.forEach(p => { p.tasks = TASKS0[p.id] || []; });
+const TAGS = ['Prioritaire', 'Landing page', 'Parrainage', 'Local Services', 'Borne VE', 'Revenir plus tard'];
+const TL = { new: ['NV', '#F0F0F3', '#48484A'], wa: ['WA', '#E3F7E9', '#1C6B3D'], call: ['AP', '#EEF2FD', '#1D3FBF'], rdv: ['RV', '#F1EAFB', '#5B2E99'], doc: ['DOC', '#FFF4D1', '#6B4A00'], devis: ['DV', '#FFF4D1', '#6B4A00'], note: ['NOTE', '#F0F0F3', '#1D1D1F'], mail: ['@', '#EEF2FD', '#1D3FBF'], status: ['ST', '#FDECEC', '#A1262B'] };
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = { list: JSON.parse(JSON.stringify(P0)), idx: 0, tab: 'act', editing: null, draft: '', menu: false, more: false, propOpen: false, waStatus: 'À traiter', rdvHour: '09:00', rdvDur: '2 heures', rdvSlot: '7 h – 10 h', rdvPlanB: false, drafts: {}, busy: {}, notifOpen: false, notifRead: false, taskDraft: '', taskWho: 'Laura', taskDue: '1', collapsed: { Classement: true, 'Propriétaire (si locataire)': true, Dates: true }, ask: null, nextDraft: '', nextDate: '', del: false, delDraft: '', kind: 'note', note: '', tlFilter: 'all', wa: '', toast: null,
+      rdvType: 'Prévisite', rdvDate: addDays(NOW, 2), rdvTech: TECHS[0] };
   }
-
-  function rec(d) {
-    var sk = d[8];
-    return { id: d[0], mo: MO[d[1]] || '', type: d[2], name: d[3], phone: d[4], city: d[5], cp: d[6], owner: d[7], statusKey: sk,
-      source: d[9], tech: d[10], rdvType: d[11], rdvDate: d[12], next: d[13], due: d[14], mails: d[15], sms: d[16], wa: d[17],
-      comments: d[18], docs: d[19] ? 1 + (d[0] % 3) : 0, docLabel: d[19], created: d[20], modified: d[21], avis: d[22], devisOpened: d[23] };
+  componentWillUnmount() { clearTimeout(this.tHide); }
+  cur() { return this.state.list[this.state.idx]; }
+  update(fn, text) {
+    const before = this.state.list;
+    const list = before.slice(); const p = Object.assign({}, list[this.state.idx]); fn(p); p.modified = NOW; list[this.state.idx] = p;
+    this.setState({ list }); if (text) this.notify(text, before);
   }
-
-  function idFromHash() { var h = (location.hash || '').replace('#', ''); return parseInt(h, 10); }
-
-  function load() {
-    fetch('tableau.html').then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }).then(function (src) {
-      ST = grab(src, 'ST');
-      ST.forEach(function (g) { g[1].forEach(function (s) { INFO[s[0]] = { label: s[1], color: g[2], group: g[0] }; }); });
-      D = grab(src, 'D').map(rec);
-      show();
-    }).catch(function (e) {
-      app.innerHTML = '<div class="card"><b>Impossible de charger les données.</b><div class="empty">Ouvre cette page depuis le site (GitHub Pages), pas en double-cliquant le fichier. (' + esc(e.message) + ')</div></div>';
-    });
+  log(p, kind, text, mentions) { const t = new Date(); p.tl = [[kind, 'Aharon', text, 'Aujourd’hui · ' + pad(t.getHours()) + ':' + pad(t.getMinutes()), mentions || []]].concat(p.tl); }
+  // Retour visuel : chargement puis « ✓ » sur le bouton
+  run(key, fn) {
+    if (this.state.busy[key]) return;
+    const set = v => { const b = Object.assign({}, this.state.busy); if (v) b[key] = v; else delete b[key]; this.setState({ busy: b }); };
+    set('loading');
+    setTimeout(() => { fn(); set('done'); setTimeout(() => set(null), 1200); }, 600);
   }
-
-  function show() {
-    var id = idFromHash();
-    cur = D.filter(function (r) { return r.id === id; })[0] || null;
-    if (!cur) {
-      app.innerHTML = '<div class="card"><b>Fiche introuvable</b><div class="empty">Aucun client ne porte le n° ' + esc(isNaN(id) ? '(vide)' : id) + '.</div><a class="btn" href="tableau.html">Revenir à la liste des prospects</a></div>';
-      return;
-    }
-    if (!notes[cur.id]) notes[cur.id] = [];
-    document.title = cur.name + ' · Fiche client · Entreprise AR';
-    document.getElementById('crumbName').textContent = cur.name + ' · #' + cur.id;
-    render();
+  // Brouillons : gardés par fiche quand on change de prospect
+  switchTo(idx) {
+    const s = this.state; const cur = s.list[s.idx]; const drafts = Object.assign({}, s.drafts);
+    drafts[cur.id] = { note: s.note, wa: s.wa };
+    const nx = s.list[idx]; const d = drafts[nx.id] || { note: '', wa: '' };
+    this.setState({ drafts, idx, note: d.note, wa: d.wa, editing: null, tab: 'act' });
   }
-
-  function timeline(r) {
-    var items = [];
-    var base = Date.parse(r.created);
-    var add = function (days, ic, bg, fg, t, s) { var d = new Date(base + days * 86400000).toISOString().slice(0, 10); items.push({ d: d, ic: ic, bg: bg, fg: fg, t: t, s: s }); };
-    add(0, 'NV', 'var(--fill)', 'var(--ink-2)', 'Fiche créée (' + r.source + ')', 'Système');
-    for (var i = 0; i < Math.min(r.wa, 4); i++) add(i + 1, 'WA', '#E6F4EC', 'var(--wa)', i % 2 ? 'Message WhatsApp reçu' : 'Message WhatsApp envoyé', r.owner);
-    for (var j = 0; j < Math.min(r.mails, 3); j++) add(j + 1, '@', 'var(--tint)', 'var(--primary)', j === 0 && r.devisOpened ? 'Devis envoyé par mail' : 'Mail envoyé', r.owner);
-    for (var k = 0; k < Math.min(r.sms, 2); k++) add(k + 2, 'SMS', '#FFF4E5', 'var(--warn)', 'SMS envoyé', r.owner);
-    if (r.devisOpened) add(3, 'DV', '#FFF8E1', 'var(--warn)', 'Devis ouvert par le client (' + r.devisOpened + ' fois)', 'Suivi automatique');
-    if (r.rdvDate) items.push({ d: r.rdvDate, ic: 'RDV', bg: 'var(--tint)', fg: 'var(--primary)', t: (r.rdvType || 'RDV') + (r.tech ? ' avec ' + r.tech : ''), s: 'Planning' });
-    items.push({ d: r.modified, ic: (r.owner || '?').slice(0, 2).toUpperCase(), bg: 'var(--fill)', fg: 'var(--ink-2)', t: 'Statut : ' + INFO[r.statusKey].label, s: r.owner });
-    notes[r.id].forEach(function (n) { items.push({ d: n.d, ic: 'AH', bg: 'var(--tint)', fg: 'var(--primary)', t: 'Commentaire : ' + n.t, s: 'Aharon' }); });
-    return items.sort(function (a, b) { return a.d < b.d ? 1 : -1; });
+  notify(text, before) {
+    clearTimeout(this.tHide); const id = (this.tid = (this.tid || 0) + 1);
+    this.setState({ toast: null }); setTimeout(() => this.setState({ toast: { text, id, before: before || null } }), 30);
+    this.tHide = setTimeout(() => { if (this.state.toast && this.state.toast.id === id) this.setState({ toast: null }); }, 3030);
   }
-
-  function render() {
-    var r = cur, st = INFO[r.statusKey] || { label: r.statusKey, color: '#8E8E93' };
-    var ini = r.name.slice(0, 2).toUpperCase();
-    var late = r.due && dd(r.due, NOW) < 0;
-    var statusOpts = ST.map(function (g) { return '<optgroup label="' + esc(g[0]) + '">' + g[1].map(function (s) { return '<option value="' + s[0] + '"' + (s[0] === r.statusKey ? ' selected' : '') + '>' + esc(s[1]) + '</option>'; }).join('') + '</optgroup>'; }).join('');
-    var ownerOpts = OWNERS.map(function (o) { return '<option' + (o === r.owner ? ' selected' : '') + '>' + o + '</option>'; }).join('');
-
-    var body = '';
-    if (tab === 'infos') {
-      body = '<div class="sec"><h3>Coordonnées</h3><div class="kv">' +
-        kv('Téléphone', r.phone) + kv('E-mail', '—') + kv('Adresse', '—') + kv('Ville', r.cp + ' ' + r.city) + kv('Département', r.cp.slice(0, 2)) + kv('Région', regionOf(r.cp)) +
-        '</div></div>' +
-        '<div class="sec"><h3>Dossier</h3><div class="kv">' +
-        kv('Type client', r.type) + kv('Maître d’œuvre', r.mo) + kv('Source', r.source) + kv('Commercial', r.owner) + kv('Créée le', fmtD(r.created)) + kv('Modifiée le', fmtD(r.modified)) +
-        '</div></div>' +
-        '<div class="sec"><h3>Intervention</h3><div class="kv">' +
-        kv('Installateur', r.tech || '—') + kv('Type de RDV', r.rdvType || '—') + kv('Date du RDV', fmtD(r.rdvDate)) + kv('Avis Google', r.avis || '—') +
-        '</div></div>';
-    } else if (tab === 'echanges') {
-      body = '<div class="stat"><div><b>' + r.wa + '</b><span>WhatsApp</span></div><div><b>' + r.mails + '</b><span>Mails</span></div><div><b>' + r.sms + '</b><span>SMS</span></div></div>' +
-        '<div class="sec"><h3>Fil des échanges</h3><div class="tl">' + timeline(r).filter(function (i) { return /WA|@|SMS/.test(i.ic); }).map(tli).join('') + '</div>' +
-        (r.wa + r.mails + r.sms === 0 ? '<div class="empty">Aucun échange pour l’instant.</div>' : '') + '</div>';
-    } else if (tab === 'devis') {
-      var docs = [];
-      if (r.devisOpened || r.statusKey === 'devis' || r.type === 'Devis') docs.push(['Devis n° D-' + r.id, r.devisOpened ? 'Ouvert ' + r.devisOpened + ' fois par le client' : 'Envoyé, pas encore ouvert', 'Devis']);
-      for (var i = 0; i < r.docs; i++) docs.push([(r.docLabel || 'Document') + ' ' + (i + 1) + '.pdf', 'Ajouté le ' + fmtD(r.modified), 'PDF']);
-      body = '<div class="sec"><h3>Devis et documents</h3>' + (docs.length ? docs.map(function (d) { return '<div class="doc"><span class="ic">' + d[2].slice(0, 3).toUpperCase() + '</span><div><b>' + esc(d[0]) + '</b><div class="s" style="font-size:12px;color:var(--muted)">' + esc(d[1]) + '</div></div><span class="sp"></span><button class="btn" data-t="Aperçu du document (maquette)">Voir</button></div>'; }).join('') : '<div class="empty">Aucun devis ni document.</div>') +
-        '<button class="pri" data-t="Création d’un devis (maquette)" style="margin-top:6px">+ Nouveau devis</button></div>';
-    } else {
-      body = '<div class="tl">' + timeline(r).map(tli).join('') + '</div>';
-    }
-
-    app.innerHTML =
-      '<div class="card"><div class="hero">' +
-        '<span class="av">' + esc(ini) + '</span>' +
-        '<div style="flex:1;min-width:200px"><h1>' + esc(r.name) + '</h1>' +
-          '<div class="meta"><span>#' + r.id + '</span><span>' + esc(r.cp + ' ' + r.city) + '</span><span>' + esc(r.source) + '</span><span>Commercial : ' + esc(r.owner) + '</span></div></div>' +
-        '<span class="pill" style="background:' + st.color + '1A;color:' + st.color + '"><span class="dot" style="background:' + st.color + '"></span>' + esc(st.label) + '</span>' +
-      '</div>' +
-      '<div class="acts">' +
-        '<button class="act" data-t="Appel vers ' + esc(r.phone) + ' (simulé)">Appeler</button>' +
-        '<button class="act wa" data-t="Ouverture de WhatsApp dans le CRM (simulé)">WhatsApp</button>' +
-        '<button class="act" data-t="Nouveau mail (simulé)">Mail</button>' +
-        '<button class="act" data-t="Nouveau SMS (simulé)">SMS</button>' +
-        '<button class="act" data-tab="devis">Devis</button>' +
-        '<button class="act" data-t="Prise de RDV (simulée)">RDV</button>' +
-      '</div></div>' +
-      '<div class="grid">' +
-        '<div class="card"><div class="tabs" role="tablist">' +
-          tb('infos', 'Informations') + tb('echanges', 'Échanges') + tb('devis', 'Devis & documents') + tb('historique', 'Historique') +
-        '</div>' + body + '</div>' +
-        '<div style="display:flex;flex-direction:column;gap:16px">' +
-          '<div class="card"><div class="lab" style="margin-bottom:8px">Prochaine action</div><div class="next"><b>' + esc(r.next || '—') + '</b>' +
-            (r.due ? 'Échéance : <span class="' + (late ? 'late' : '') + '">' + fmtD(r.due) + (late ? ' · en retard' : '') + '</span>' : '') + '</div></div>' +
-          '<div class="card"><label class="lab" for="fSt">Statut</label><select class="in" id="fSt" style="margin:6px 0 12px">' + statusOpts + '</select>' +
-            '<label class="lab" for="fOw">Commercial</label><select class="in" id="fOw" style="margin-top:6px">' + ownerOpts + '</select></div>' +
-          '<div class="card"><label class="lab" for="fCo">Commentaire</label><textarea class="in" id="fCo" placeholder="Ajouter un commentaire…" style="margin-top:6px"></textarea>' +
-            '<button class="pri" id="fAdd" style="margin-top:8px;width:100%">Ajouter</button>' +
-            (notes[r.id].length ? '<div class="sec" style="margin-top:12px"><div class="tl">' + notes[r.id].slice().reverse().map(function (n) { return tli({ ic: 'AH', bg: 'var(--tint)', fg: 'var(--primary)', t: n.t, s: 'Aharon · ' + fmtD(n.d) }); }).join('') + '</div></div>' : '') +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    wire();
-    var i = D.indexOf(r);
-    document.getElementById('prev').disabled = i <= 0;
-    document.getElementById('next').disabled = i >= D.length - 1;
+  setField(k, v) {
+    const old = this.cur()[k] || ''; this.setState({ editing: null }); if (v === old) return;
+    this.update(p => { p[k] = v; this.log(p, 'note', FL[k][1] + ' : ' + (v || 'vidé')); }, FL[k][1] + ' mis à jour');
   }
-
-  function kv(k, v) { return '<div><div class="k">' + esc(k) + '</div><div class="v">' + esc(v || '—') + '</div></div>'; }
-  function tb(k, l) { return '<button class="tab" role="tab" aria-selected="' + (tab === k) + '" data-tab="' + k + '">' + l + '</button>'; }
-  function tli(i) { return '<div class="tli"><span class="ic" style="background:' + i.bg + ';color:' + i.fg + '">' + esc(i.ic) + '</span><div><div class="t">' + esc(i.t) + '</div><div class="s">' + esc(i.s) + (i.d ? ' · ' + fmtD(i.d) : '') + '</div></div></div>'; }
-
-  function wire() {
-    app.querySelectorAll('[data-tab]').forEach(function (b) { b.onclick = function () { tab = b.getAttribute('data-tab'); render(); }; });
-    app.querySelectorAll('[data-t]').forEach(function (b) { b.onclick = function () { toast(b.getAttribute('data-t')); }; });
-    document.getElementById('fSt').onchange = function (e) { cur.statusKey = e.target.value; cur.modified = NOW; render(); toast('Statut mis à jour : ' + INFO[cur.statusKey].label); };
-    document.getElementById('fOw').onchange = function (e) { cur.owner = e.target.value; render(); toast('Fiche attribuée à ' + cur.owner); };
-    document.getElementById('fAdd').onclick = function () { var t = document.getElementById('fCo').value.trim(); if (!t) return; notes[cur.id].push({ t: t, d: NOW }); render(); toast('Commentaire ajouté'); };
+  renderVals() {
+    const s = this.state; const p = this.cur();
+    const st = INFO[p.status]; const n = dd(p.due, NOW);
+    const go = t => () => this.setState({ tab: t, menu: false, more: false });
+    // Remplissage
+    const counted = FIELDS.filter(f => f[4]); const filled = counted.filter(f => p[f[0]]);
+    const pct = Math.round(filled.length / counted.length * 100);
+    const missing = counted.filter(f => !p[f[0]]).map(f => ({ label: f[1], edit: () => this.setState({ editing: f[0], draft: '' }) }));
+    const pv = Object.assign({}, p, { dept: (p.cp || '').slice(0, 2), insee: p.adresse ? '[INSEE auto]' : '', createdTxt: fmtD(p.created), modifiedTxt: fmtD(p.modified) });
+    const propShown = p.nature === 'Locataire' || s.propOpen;
+    const infoGroups = [G_CLASS, G_CONTACT, G_ADR, G_OCC, G_PROP, G_DATES].map(g => {
+      const isProp = g === G_PROP;
+      const fields = (isProp && !propShown) ? [] : FIELDS.filter(f => f[2] === g).map(f => {
+        const k = f[0]; const v = pv[k] || ''; const ro = f[3] === 'ro'; const ed = !ro && s.editing === k;
+        const req = REQ.indexOf(k) >= 0;
+        const sugg = (k === 'adresse' && ed && (s.draft || '').trim().length >= 3) ? [['94800', 'Villejuif', 'Île-de-France'], ['94000', 'Créteil', 'Île-de-France'], ['75013', 'Paris', 'Île-de-France']].map(x => ({
+          l1: s.draft.trim(), l2: x[0] + ' ' + x[1], pick: ev => { ev.preventDefault(); const val = s.draft.trim(); this.setState({ editing: null });
+            this.update(q => { q.adresse = val; q.cp = x[0]; q.ville = x[1]; q.zone = x[2]; this.log(q, 'note', 'Adresse : ' + val + ', ' + x[0] + ' ' + x[1]); }, 'Adresse complétée (CP, ville, INSEE, zone)'); } })) : [];
+        return { label: f[1], value: v, req, reqRing: req && !v ? '#F5C2C0' : 'transparent', hasSugg: sugg.length > 0, sugg, ph: k === 'adresse' ? 'Tape le n° et la rue…' : '',
+          text: ro ? (v || '—') : (v || (f[3] ? 'Choisir…' : '+ Ajouter')), color: v ? '#1D1D1F' : '#6E6E73', weight: v ? '600' : '500',
+          isRo: ro, isView: !ro && !ed, isInput: ed && !f[3], isSelect: ed && Array.isArray(f[3]), opts: Array.isArray(f[3]) ? f[3] : [],
+          edit: () => this.setState({ editing: k, draft: v }), onSelect: e => this.setField(k, e.target.value) }; });
+      const all = FIELDS.filter(f => f[2] === g); const missReq = all.filter(f => REQ.indexOf(f[0]) >= 0 && !pv[f[0]]).length;
+      const open = !s.collapsed[g] || missReq > 0;
+      return { title: g, fields, open, rot: open ? '90deg' : '0deg', hasMissingReq: missReq > 0, missingReq: missReq,
+        summary: open ? '' : all.filter(f => pv[f[0]]).length + ' / ' + all.length,
+        collapse: () => { const c = Object.assign({}, this.state.collapsed); c[g] = open; this.setState({ collapsed: c }); },
+        hasToggle: isProp && p.nature !== 'Locataire', toggleLabel: s.propOpen ? 'Masquer' : '+ Ajouter',
+        toggle: () => this.setState({ propOpen: !s.propOpen }),
+        hint: (g === G_ADR && !p.adresse) || (isProp && !propShown), hintText: isProp ? 'À remplir si le client est locataire.' : 'Saisis l’adresse complète puis choisis-la dans la liste : le code INSEE et la géolocalisation se remplissent seuls.' }; });
+    const tlKinds = { all: null, call: ['call'], msg: ['wa', 'mail'], devis: ['devis'], notes: ['note', 'status', 'rdv', 'doc', 'new'] };
+    const timeline = p.tl.filter(e => !tlKinds[s.tlFilter] || tlKinds[s.tlFilter].indexOf(e[0]) >= 0).map(e => { const t = TL[e[0]] || TL.note; const m = e[4] || []; return { tag: t[0], bg: t[1], fg: t[2], who: e[1], text: e[2], when: e[3], hasMentions: m.length > 0, mentions: m.join(', ') }; });
+    const seg = on => ({ bg: on ? '#FFFFFF' : 'transparent', shadow: on ? '0 1px 3px rgba(0,0,0,.12)' : 'none', fg: '#1D1D1F' });
+    const kindDefs = [['note', 'Note'], ['call', 'Appel'], ['wa', 'WhatsApp'], ['mail', 'Mail']];
+    const tabDefs = [['act', 'Activité & commentaires', p.tl.length], ['chantier', 'Chantier', 0], ['devis', 'Devis', p.devis.length], ['rdv', 'Rendez-vous', p.rdvs.length], ['docs', 'Documents', p.docs.length], ['wa', 'WhatsApp', p.wa.length], ['mails', 'Mails', p.mails.length], ['sav', 'SAV', p.savs.length]];
+    const moreCur = s.tab.indexOf('more:') === 0 ? MORE.find(m => 'more:' + m[0] === s.tab) : null;
+    const upcoming = p.rdvs.filter(r => r.date >= NOW).sort((a, b) => a.date < b.date ? -1 : 1)[0];
+    const lastR = p.rdvs[p.rdvs.length - 1];
+    return {
+      p: { nomUpper: p.nom.toUpperCase(), statusLabel: st.label, id: p.id, fullName: (p.prenom ? p.prenom + ' ' : '') + p.nom, initials: (p.prenom ? p.prenom[0] : '') + p.nom[0], place: (p.cp + ' ' + p.ville).trim(), source: p.source + ' · ' + (p.canal || '—'), owner: p.owner, created: fmtD(p.created),
+        status: p.status, sBg: st.pill[0], sFg: st.pill[1], caret: caret(st.pill[1]),
+        badges: (p.devis.some(d => d.ouv > 0) ? [{ label: 'Devis ouvert', bg: '#FFF4D1', fg: '#6B4A00' }] : []).concat(p.tags.indexOf('Prioritaire') >= 0 ? [{ label: 'Prioritaire', bg: '#1D1D1F', fg: '#FFFFFF' }] : []),
+        next: p.next || 'Aucune action prévue', dueTxt: !p.next ? '' : n < 0 ? 'en retard de ' + (-n) + ' j' : n === 0 ? 'aujourd’hui' : n === 1 ? 'demain' : 'le ' + fmtD(p.due),
+        dueC: n < 0 ? '#C5221F' : n === 0 ? '#B25E00' : '#1D3FBF', nextBg: n < 0 ? '#FDF1F0' : '#F7F8FC' },
+      posLabel: 'Prospect ' + (s.idx + 1) + ' sur ' + s.list.length,
+      prevP: () => this.switchTo((s.idx + s.list.length - 1) % s.list.length),
+      nextP: () => this.switchTo((s.idx + 1) % s.list.length),
+      statusOptions: ST.map(x => ({ key: x[0], label: x[1] })),
+      onStatus: e => { const v = e.target.value; const prev = p.status; this.update(q => { q.status = v; this.log(q, 'status', 'Statut → ' + INFO[v].label); }); this.setState({ ask: { prev, status: v }, nextDraft: '', nextDate: addDays(NOW, 1) }); },
+      menuOpen: s.menu, anyMenu: s.menu || s.more || s.notifOpen, toggleMenu: () => this.setState({ menu: !s.menu, more: false }), closeMenu: () => this.setState({ menu: false, more: false, notifOpen: false }),
+      menuItems: MENU.map(m => ({ label: m[0], color: m[1] || '#1D1D1F', act: () => { if (m[0] === 'Supprimer la fiche') { this.setState({ menu: false, del: true, delDraft: '' }); return; } this.setState({ menu: false }); this.notify(m[0] + ' (maquette)'); } })),
+      moreOpen: s.more, toggleMore: () => this.setState({ more: !s.more, menu: false }), moreLabel: moreCur ? moreCur[0] : 'Plus', moreFg: moreCur ? '#1D3FBF' : '#3A3A3C', moreLine: moreCur ? '#1D3FBF' : 'transparent',
+      moreItems: MORE.map(m => ({ label: m[0], pick: go('more:' + m[0]) })),
+      tMore: !!moreCur, more: moreCur ? { title: moreCur[0], desc: moreCur[1], rows: moreCur[2].map(r => ({ a: r[0], b: r[1], c: r[2] })) } : { title: '', desc: '', rows: [] },
+      tChantier: s.tab === 'chantier', tMails: s.tab === 'mails', tSav: s.tab === 'sav', goAct: go('act'),
+      chantier: { ref: p.chantier.ref, paidLabel: p.chantier.paid ? 'Payé' : 'Non payé', paidBg: p.chantier.paid ? '#E3F4EA' : '#F0F0F3', paidFg: p.chantier.paid ? '#1C6B3D' : '#48484A',
+        validLabel: p.chantier.valid ? '✓ Chantier validé' : 'Valider le chantier',
+        totals: [['Total HT', '0,00 €', '#FFFFFF', '#1D1D1F', '#6E6E73'], ['Total TTC', '0,00 €', '#FFFFFF', '#1D1D1F', '#6E6E73'], ['Total paiements', '0,00 €', '#1D1D1F', '#FFFFFF', '#C7C7CC'], ['TTC avant remise', '0,00 €', '#E8EDFD', '#1D3FBF', '#4A5A9A']]
+          .map(t => ({ label: t[0], value: t[1], bg: t[2] === '#FFFFFF' ? '#F7F7F9' : t[2], fg: t[3], fg2: t[4] })),
+        interv: p.chantier.interv.map(i => ({ label: i, remove: () => this.update(q => { q.chantier = Object.assign({}, q.chantier, { interv: q.chantier.interv.filter(x => x !== i) }); }, 'Intervention retirée') })) },
+      intervOpts: INTERV,
+      addInterv: e => { const v = e.target.value; if (!v) return; this.update(q => { q.chantier = Object.assign({}, q.chantier, { interv: q.chantier.interv.concat([v]) }); this.log(q, 'note', 'Intervention réalisée : ' + v); }, 'Intervention ajoutée'); },
+      togglePaid: () => this.update(q => { q.chantier = Object.assign({}, q.chantier, { paid: !q.chantier.paid }); }, p.chantier.paid ? 'Marqué non payé' : 'Marqué payé'),
+      validateChantier: () => this.update(q => { q.chantier = Object.assign({}, q.chantier, { valid: true }); this.log(q, 'status', 'Chantier validé'); }, 'Chantier validé'),
+      printChantier: () => this.notify('Impression du chantier (maquette)'),
+      mails: p.mails.map(m => ({ dir: m[0], subject: m[1], when: m[2], bg: m[0] === 'Reçu' ? '#E3F4EA' : '#EEF2FD', fg: m[0] === 'Reçu' ? '#1C6B3D' : '#1D3FBF', act: () => this.notify('Ouverture du mail (maquette)') })),
+      newMail: () => this.setState({ tab: 'act', kind: 'mail' }),
+      savs: p.savs.map(v => ({ title: v[0], info: v[1], statut: v[2] })), noSav: p.savs.length === 0,
+      newSav: () => this.update(q => { q.savs = q.savs.concat([['Demande de SAV', 'Créée le ' + fmtD(NOW), 'À planifier']]); this.log(q, 'status', 'Demande de SAV créée'); }, 'Demande de SAV créée'),
+      demandes: DEMANDES.map(d => { const on = p.demandes.indexOf(d) >= 0; return { label: d, on, bg: on ? '#1D3FBF' : '#FFFFFF', fg: on ? '#FFFFFF' : '#1D1D1F', ring: on ? '#1D3FBF' : '#D2D2D7',
+        toggle: () => this.update(q => { q.demandes = on ? q.demandes.filter(x => x !== d) : q.demandes.concat([d]); }, (on ? 'Retiré : ' : 'Ajouté : ') + d) }; }),
+      hasDups: p.dups > 0, dupCount: p.dups, dupLabel: p.dups > 1 ? p.dups + ' autres fiches semblables' : '1 autre fiche semblable',
+      showDups: () => this.notify('Liste des fiches semblables (maquette)'),
+      mergeDups: () => this.update(q => { q.dups = 0; this.log(q, 'status', 'Fiches fusionnées'); }, 'Fiches fusionnées'),
+      rdvTypes: ['Prévisite', 'Pose', 'Dépannage', 'SAV', 'Travaux', 'Appel vidéo'], rdvHour: s.rdvHour, rdvDur: s.rdvDur, rdvSlot: s.rdvSlot, rdvPlanB: s.rdvPlanB,
+      onRdvHour: e => this.setState({ rdvHour: e.target.value }), onRdvDur: e => this.setState({ rdvDur: e.target.value }), onRdvSlot: e => this.setState({ rdvSlot: e.target.value }),
+      togglePlanB: () => this.setState({ rdvPlanB: !s.rdvPlanB }), showDispo: () => this.notify('Disponibilités des techniciens (maquette)'),
+      waStatus: s.waStatus, waStatuses: WA_STATUSES, onWaStatus: e => { this.setState({ waStatus: e.target.value }); this.notify('Conversation : ' + e.target.value); },
+      metaTpls: META_TPLS, onWaTpl: e => { const v = e.target.value; if (v) this.setState({ wa: '[Modèle Meta : ' + v + ']' }); },
+      waPhotos: () => this.update(q => { q.docs = q.docs.concat([['Photo WhatsApp ' + (q.docs.length + 1) + '.jpg', 'WhatsApp']]); this.log(q, 'doc', 'Photos de la conversation ajoutées à la fiche'); }, 'Photos ajoutées aux documents'),
+      waReminder: () => this.update(q => { q.next = 'Rappeler (depuis WhatsApp)'; q.due = addDays(NOW, 1); }, 'Rappel créé pour demain'),
+      waReload: () => this.notify('Conversation rechargée'), waFull: () => this.notify('Messagerie en pleine page (maquette)'),
+      waAttach: () => this.notify('Joindre un document (maquette)'), waFix: () => this.notify('Orthographe corrigée (IA, maquette)'), waRephrase: () => this.notify('Message reformulé (IA, maquette)'),
+      orderRexel: go('more:Commande Rexel'), signDoc: go('more:Signatures de documents'), toDrive: () => this.notify('Ajouté au Drive photos (maquette)'),
+      menuAct: () => { this.setState({ menu: false }); this.notify('Action lancée (maquette)'); },
+      goWa: go('wa'), goRdv: go('rdv'), goDevis: go('devis'), goDevisTab: go('devis'),
+      steps: STEPS.map((l, i) => ({ label: l, current: i === p.step ? 'step' : 'false', bar: i <= p.step ? '#1D3FBF' : '#E5E5EA', fg: i === p.step ? '#1D3FBF' : (i < p.step ? '#1D1D1F' : '#6E6E73'), weight: i === p.step ? '800' : '600',
+        pick: () => this.update(q => { q.step = i; this.log(q, 'status', 'Étape → ' + l); }, 'Étape : ' + l) })),
+      nextDone: () => this.update(q => { this.log(q, 'note', 'Fait : ' + q.next); q.next = ''; }, 'Action marquée comme faite'),
+      postpone: [['+1 jour', 1], ['+3 jours', 3], ['Lundi', dd('2026-11-09', NOW)]].map(x => ({ label: x[0], pick: () => this.update(q => { q.due = addDays(NOW, x[1]); this.log(q, 'note', 'Action reportée au ' + fmtD(q.due)); }, 'Reporté au ' + fmtD(addDays(NOW, x[1]))) })),
+      fillPct: pct + '%', fillC: pct >= 75 ? '#1C6B3D' : pct >= 50 ? '#1D3FBF' : '#C2410C', missing, complete: missing.length === 0, infoGroups,
+      draft: s.draft, onDraft: e => this.setState({ draft: e.target.value }),
+      onDraftKey: e => { if (e.key === 'Enter') e.target.blur(); if (e.key === 'Escape') this.setState({ editing: null }); },
+      commit: () => { if (s.editing && !FL[s.editing][3]) this.setField(s.editing, this.state.draft.trim()); },
+      cancelEdit: () => this.setState({ editing: null }),
+      tabs: tabDefs.map(t => { const on = s.tab === t[0]; return { label: t[1], count: t[2], hasCount: t[2] > 0, on, fg: on ? '#1D3FBF' : '#3A3A3C', line: on ? '#1D3FBF' : 'transparent', cBg: on ? '#1D3FBF' : '#F0F0F3', cFg: on ? '#FFFFFF' : '#3A3A3C', pick: go(t[0]) }; }),
+      tAct: s.tab === 'act', tDevis: s.tab === 'devis', tFact: s.tab === 'fact', tRdv: s.tab === 'rdv', tDocs: s.tab === 'docs', tWa: s.tab === 'wa', tAvis: s.tab === 'avis',
+      kinds: kindDefs.map(k => Object.assign({ label: k[1], on: s.kind === k[0], pick: () => this.setState({ kind: k[0] }) }, seg(s.kind === k[0]))),
+      isCallKind: s.kind === 'call',
+      callResults: [['Répondu', 'Répondu'], ['NRP', 'NRP – message laissé'], ['À rappeler', 'À rappeler']].map(c => ({ label: c[0], pick: () => this.update(q => { this.log(q, 'call', 'Appel : ' + c[1] + (s.note ? ' — ' + s.note : '')); if (c[0] === 'NRP') { q.status = 'nrp'; q.next = 'Rappeler (NRP)'; q.due = addDays(NOW, 1); } }, 'Appel enregistré : ' + c[0]) })),
+      note: s.note, onNote: e => this.setState({ note: e.target.value }),
+      notePh: { note: 'Écrire une note interne…', call: 'Résumé de l’appel (facultatif), puis choisis le résultat…', wa: 'Message WhatsApp à envoyer…', mail: 'Message à envoyer par mail…' }[s.kind],
+      addLabelUnused: { note: 'Ajouter la note', call: 'Enregistrer l’appel', wa: 'Envoyer le WhatsApp', mail: 'Envoyer le mail' }[s.kind],
+      addNote: () => { const t = s.note.trim(); if (!t) return; const k = s.kind;
+        const mentions = TEAM.map(m => m[0]).filter(n => t.indexOf('@' + n) >= 0);
+        this.run('note', () => { this.setState({ note: '' });
+          this.update(q => { this.log(q, k, (k === 'wa' ? 'WhatsApp : ' : k === 'mail' ? 'Mail : ' : k === 'call' ? 'Appel : ' : '') + t, mentions); if (k === 'wa') q.wa = q.wa.concat([['out', t, 'Maintenant']]); },
+            (k === 'note' ? 'Note ajoutée' : k === 'call' ? 'Appel enregistré' : (k === 'wa' ? 'WhatsApp' : 'Mail') + ' envoyé (maquette)') + (mentions.length ? ' · ' + mentions.join(', ') + ' notifié(e)' : '')); }); },
+      hasMentionSugg: /@[A-Za-zÀ-ÿ]*$/.test(s.note),
+      mentionSugg: (() => { const m = /@([A-Za-zÀ-ÿ]*)$/.exec(s.note); if (!m) return []; const part = m[1].toLowerCase();
+        return TEAM.filter(x => x[0].toLowerCase().indexOf(part) === 0).map(x => ({ name: x[0], role: x[1], pick: () => this.setState({ note: s.note.slice(0, s.note.length - m[0].length) + '@' + x[0] + ' ' }) })); })(),
+      draftInfo: s.note.trim() ? 'Brouillon gardé automatiquement' : 'Astuce : tape @ pour prévenir un collègue',
+      noteBtn: { loading: s.busy.note === 'loading', label: s.busy.note === 'loading' ? 'Enregistrement…' : s.busy.note === 'done' ? '✓ Enregistré' : { note: 'Ajouter la note', call: 'Enregistrer l’appel', wa: 'Envoyer le WhatsApp', mail: 'Envoyer le mail' }[s.kind], bg: s.busy.note === 'done' ? 'var(--c-success)' : 'var(--c-primary)' },
+      tlFiltersUnused: null,
+      tlFilters: [['all', 'Tout'], ['call', 'Appels'], ['msg', 'Messages'], ['devis', 'Devis'], ['notes', 'Notes & statuts']].map(x => { const on = s.tlFilter === x[0]; return { label: x[1], bg: on ? '#1D1D1F' : '#FFFFFF', fg: on ? '#FFFFFF' : '#1D1D1F', ring: on ? '#1D1D1F' : '#D2D2D7', pick: () => this.setState({ tlFilter: x[0] }) }; }),
+      timeline,
+      devis: p.devis.map(d => ({ n: d.n, montant: d.montant, statut: d.statut, info: d.info, sBg: d.ouv > 0 ? '#FFF4D1' : '#F0F0F3', sFg: d.ouv > 0 ? '#6B4A00' : '#48484A',
+        hasTrack: d.ouv > 0 || !!d.lines, track: d.ouv > 0 ? 'Ouvert ' + d.ouv + ' fois · dernière ouverture hier à 17 h 12 · pas encore signé' : (d.lines ? d.lines + ' lignes Rexel reprises du compte rendu de visite — à vérifier' : ''),
+        act: () => this.notify('Action sur ' + d.n + ' (maquette)'),
+        relance: () => this.setState({ tab: 'wa', wa: '[Modèle Meta : relance_devis_client_qualification]' }) })),
+      noDevis: p.devis.length === 0,
+      newDevis: () => this.update(q => { q.devis = q.devis.concat([{ n: 'Brouillon', montant: '[MONTANT]', statut: 'Brouillon', info: 'Créé à l’instant', ouv: 0 }]); this.log(q, 'devis', 'Nouveau devis brouillon'); }, 'Devis brouillon créé'),
+      importCsv: () => this.notify('Import CSV Rexel (maquette)'),
+      fromVisit: () => this.update(q => { q.devis = q.devis.concat([{ n: 'Brouillon', montant: '[MONTANT]', statut: 'Brouillon', info: 'Pré-rempli depuis le compte rendu de visite', ouv: 0, lines: 6 }]); this.log(q, 'devis', 'Devis créé depuis le compte rendu de visite'); }, 'Devis pré-rempli depuis la visite'),
+      rdvs: p.rdvs.slice().reverse().map(r => { const done = r.date < NOW || r.etat === 'Réalisée'; return { day: r.date.slice(8, 10), month: MONTHS[Number(r.date.slice(5, 7)) - 1], type: r.type, tech: r.tech,
+        info: fmtD(r.date) + (r.cr ? ' · compte rendu reçu' : done ? ' · compte rendu en attente' : ''), etat: done ? 'Réalisée' : 'Planifiée', sBg: done ? '#E3F4EA' : '#EEF2FD', sFg: done ? '#1C6B3D' : '#1D3FBF',
+        btn: done ? (r.cr ? 'Voir le compte rendu' : 'Relancer le technicien') : 'Modifier', act: () => this.notify(done ? 'Demande envoyée au technicien (maquette)' : 'Modification du RDV (maquette)') }; }),
+      rdvType: s.rdvType, rdvDate: s.rdvDate, rdvTech: s.rdvTech, techs: TECHS,
+      onRdvType: e => this.setState({ rdvType: e.target.value }), onRdvDate: e => this.setState({ rdvDate: e.target.value }), onRdvTech: e => this.setState({ rdvTech: e.target.value }),
+      rdvBtn: { loading: s.busy.rdv === 'loading', label: s.busy.rdv === 'loading' ? 'Planification…' : s.busy.rdv === 'done' ? '✓ Planifié' : '+ Ajouter le RDV', bg: s.busy.rdv === 'done' ? 'var(--c-success)' : 'var(--c-primary)' },
+      addRdv: () => this.run('rdv', () => this.update(q => { q.rdvs = q.rdvs.concat([{ date: s.rdvDate, type: s.rdvType, tech: s.rdvTech, etat: 'Planifiée', cr: false }]); q.tech = s.rdvTech; q.status = 'rdv'; this.log(q, 'rdv', s.rdvType + ' planifiée le ' + fmtD(s.rdvDate) + ' avec ' + s.rdvTech); }, s.rdvType + ' planifiée le ' + fmtD(s.rdvDate))),
+      docs: p.docs.map(d => { const ext = d[0].split('.').pop().toUpperCase(); const img = ext === 'JPG' || ext === 'PNG'; return { name: d[0], from: d[1], ext, bg: img ? '#E3F4EA' : '#EEF2FD', fg: img ? '#1C6B3D' : '#1D3FBF' }; }),
+      addDoc: () => this.update(q => { q.docs = q.docs.concat([['Nouveau document ' + (q.docs.length + 1) + '.pdf', 'Ajouté par Aharon']]); this.log(q, 'doc', 'Document ajouté'); }, 'Document ajouté'),
+      askPhotos: () => this.update(q => { q.wa = q.wa.concat([['out', 'Bonjour, pourriez-vous nous envoyer des photos de votre tableau électrique ? Merci ! Entreprise AR', 'Maintenant']]); this.log(q, 'wa', 'Demande de photos envoyée'); }, 'Demande de photos envoyée'),
+      sendDocsTech: () => this.notify('Documents envoyés au technicien (maquette)'),
+      waMsgs: p.wa.map(m => ({ text: m[1], when: m[2], align: m[0] === 'out' ? 'flex-end' : 'flex-start', bg: m[0] === 'out' ? '#D9FDD3' : '#FFFFFF' })),
+      wa: s.wa, onWa: e => this.setState({ wa: e.target.value }),
+      sendWa: () => { const t = s.wa.trim(); if (!t) return; this.run('wa', () => { this.setState({ wa: '' }); this.update(q => { q.wa = q.wa.concat([['out', t, 'Maintenant']]); this.log(q, 'wa', 'WhatsApp : ' + t); }, 'WhatsApp envoyé (maquette)'); }); },
+      waBtn: { loading: s.busy.wa === 'loading', label: s.busy.wa === 'loading' ? 'Envoi…' : s.busy.wa === 'done' ? '✓ Envoyé' : 'Envoyer', bg: s.busy.wa === 'done' ? 'var(--c-success)' : 'var(--c-wa)' },
+      waTpls: [['Relance devis', 'Bonjour, avez-vous pu consulter notre devis ? Je reste disponible. Aharon – Entreprise AR'], ['Confirmation RDV', 'Bonjour, votre rendez-vous est confirmé. À bientôt ! Entreprise AR'], ['Demande de photos', 'Bonjour, pourriez-vous nous envoyer des photos du tableau électrique ? Merci !'], ['Avis Google', 'Merci pour votre confiance ! Un petit avis ? [LIEN AVIS]']]
+        .map(t => ({ label: t[0], use: () => this.setState({ wa: t[1] }) })),
+      stars: p.avis ? '★★★★★'.slice(0, p.avis) + '☆☆☆☆☆'.slice(0, 5 - p.avis) : '☆☆☆☆☆', avisInfo: p.avis ? p.avis + ' / 5 sur le site' : 'Pas encore d’avis',
+      sendAvis: () => this.update(q => { q.wa = q.wa.concat([['out', 'Merci pour votre confiance ! Un petit avis ? [LIEN AVIS]', 'Maintenant']]); this.log(q, 'wa', 'Lien avis Google envoyé'); }, 'Lien avis envoyé par WhatsApp'),
+      sendAvisMail: () => this.notify('Lien avis envoyé par mail (maquette)'),
+      stats: [['Fiche remplie', pct + '%', pct >= 75 ? '#1C6B3D' : '#C2410C', 'act'], ['Devis', p.devis.length, '#1D3FBF', 'devis'], ['WhatsApp', p.wa.length, '#1C6B3D', 'wa'], ['Documents', p.docs.length, '#1D3FBF', 'docs']]
+        .map(k => ({ label: k[0], value: k[1], color: k[2], go: go(k[3]) })),
+      nextRdv: upcoming ? { title: upcoming.type + ' · ' + fmtD(upcoming.date), sub: 'Avec ' + upcoming.tech } : (lastR ? { title: 'Aucun RDV à venir', sub: 'Dernier : ' + lastR.type + ' le ' + fmtD(lastR.date) } : { title: 'Aucun RDV', sub: 'Planifie une prévisite' }),
+      teamCard: [[p.owner, 'Commercial'], [p.tech || 'Non assigné', 'Installateur'], ['Aharon', 'Suivi bureau']].filter((m, i, a) => a.findIndex(x => x[0] === m[0]) === i)
+        .map((m, i) => ({ name: m[0], role: m[1], ini: m[0].slice(0, 2).toUpperCase(), bg: ['#E8EDFD', '#E3F4EA', '#FFF4D1'][i], fg: ['#1D3FBF', '#1C6B3D', '#6B4A00'][i] })),
+      tags: TAGS.map(t => { const on = p.tags.indexOf(t) >= 0; return { label: t, on, bg: on ? '#1D3FBF' : '#F0F0F3', fg: on ? '#FFFFFF' : '#3A3A3C',
+        toggle: () => this.update(q => { q.tags = on ? q.tags.filter(x => x !== t) : q.tags.concat([t]); }, (on ? 'Étiquette retirée : ' : 'Étiquette ajoutée : ') + t) }; }),
+      hasToast: !!s.toast, toastText: s.toast ? s.toast.text : '', toastUndo: !!(s.toast && s.toast.before),
+      undo: () => { const b = s.toast && s.toast.before; if (!b) return; clearTimeout(this.tHide); this.setState({ list: b, toast: null }); setTimeout(() => this.notify('Modification annulée'), 40); },
+      team: ['Aharon'].concat(TEAM.map(m => m[0])),
+      tasks: p.tasks.map((t, i) => { const n = dd(t.due, NOW); return { text: t.text, who: t.who, done: t.done, deco: t.done ? 'line-through' : 'none', color: t.done ? '#6E6E73' : '#1D1D1F',
+        dueTxt: t.done ? 'fait' : n < 0 ? 'en retard de ' + (-n) + ' j' : n === 0 ? 'aujourd’hui' : n === 1 ? 'demain' : 'le ' + fmtD(t.due), dueC: !t.done && n < 0 ? 'var(--c-danger)' : '#6E6E73',
+        toggle: () => this.update(q => { q.tasks = q.tasks.map((x, j) => j === i ? Object.assign({}, x, { done: !x.done }) : x); if (!t.done) this.log(q, 'note', 'Tâche terminée : ' + t.text); }, t.done ? 'Tâche rouverte' : 'Tâche terminée') }; }),
+      tasksLeft: p.tasks.filter(t => !t.done).length + ' à faire',
+      taskDraft: s.taskDraft, onTaskDraft: e => this.setState({ taskDraft: e.target.value }), taskWho: s.taskWho, onTaskWho: e => this.setState({ taskWho: e.target.value }),
+      taskDue: s.taskDue, onTaskDue: e => this.setState({ taskDue: e.target.value }), taskOpacity: s.taskDraft.trim() ? '1' : '.45',
+      addTask: () => { const t = s.taskDraft.trim(); if (!t) return; const who = s.taskWho, due = addDays(NOW, Number(s.taskDue)); this.setState({ taskDraft: '' });
+        this.update(q => { q.tasks = q.tasks.concat([{ text: t, who, due, done: false }]); this.log(q, 'note', 'Tâche assignée à ' + who + ' : ' + t, who === 'Aharon' ? [] : [who]); }, 'Tâche assignée à ' + who + (who === 'Aharon' ? '' : ' · notifié(e)')); },
+      notifOpen: s.notifOpen, toggleNotif: () => this.setState({ notifOpen: !s.notifOpen, notifRead: true, menu: false, more: false }),
+      unread: s.notifRead ? 0 : 2, hasUnread: !s.notifRead,
+      notifs: [['Raphael', 'RA', 'vous a mentionné sur MOMAL : « @Aharon tu peux rappeler la cliente pour l’adresse ? »', 'il y a 20 min'], ['Laura', 'LA', 'vous a assigné une tâche sur DESVIGNE : vérifier les prix Rexel du devis', 'hier, 17:40']]
+        .map((n, i) => ({ who: n[0], ini: n[1], text: n[2], when: n[3], bg: !s.notifRead && i < 2 ? '#F5F8FF' : 'transparent' })),
+      hasPresence: s.idx === 1, presence: 'Laura consulte aussi cette fiche',
+      brief: (() => {
+        const last = p.tl[0];
+        const blocks = [];
+        if (!p.tel) blocks.push('téléphone manquant'); if (!p.adresse) blocks.push('adresse à compléter'); if (p.docs.length === 0) blocks.push('pas de photos du tableau');
+        if (p.devis.some(d => d.ouv > 0)) blocks.push('devis ouvert mais non signé'); if (!p.next) blocks.push('aucune prochaine action');
+        return [
+          { n: '1', title: 'Ce qu’il demande', text: p.demandes.join(' · ') || 'Type de demande non renseigné', sub: p.urgence || 'Urgence non renseignée', bg: '#FFFFFF', ring: '#E5E5EA', iconBg: '#EEF2FD', iconFg: '#1D3FBF' },
+          { n: '2', title: 'Dernier échange', text: last ? last[2] : 'Aucun échange', sub: last ? last[1] + ' · ' + last[3] : '', bg: '#FFFFFF', ring: '#E5E5EA', iconBg: '#E3F4EA', iconFg: '#1C6B3D' },
+          { n: '3', title: 'Ce qui bloque', text: blocks.length ? blocks.slice(0, 2).join(', ') : 'Rien, tout est prêt', sub: blocks.length > 2 ? '+ ' + (blocks.length - 2) + ' autre(s) point(s)' : '',
+            bg: blocks.length ? '#FFF7EC' : '#F3FBF6', ring: blocks.length ? '#F5D3A6' : '#BFE5CC', iconBg: blocks.length ? '#FFE3BF' : '#E3F4EA', iconFg: blocks.length ? '#8A4300' : '#1C6B3D' }
+        ]; })(),
+      askNext: !!s.ask, askNextStatus: s.ask ? INFO[s.ask.status].label : '',
+      nextIdeas: ['Rappeler', 'Envoyer le devis', 'Planifier la prévisite', 'Relancer par WhatsApp', 'Attendre les photos'].map(t => ({ label: t, pick: () => this.setState({ nextDraft: t }) })),
+      nextDraft: s.nextDraft, onNextDraft: e => this.setState({ nextDraft: e.target.value }),
+      nextDate: s.nextDate, onNextDate: e => this.setState({ nextDate: e.target.value }),
+      nextDates: [['Demain', addDays(NOW, 1)], ['Après-demain', addDays(NOW, 2)], ['Lundi', '2026-11-09'], ['Dans 1 semaine', addDays(NOW, 7)]].map(x => ({ label: x[0], bg: s.nextDate === x[1] ? 'var(--c-primary)' : '#F0F0F3', fg: s.nextDate === x[1] ? '#fff' : '#1D1D1F', pick: () => this.setState({ nextDate: x[1] }) })),
+      nextInvalid: !s.nextDraft.trim() || !s.nextDate, nextOpacity: (!s.nextDraft.trim() || !s.nextDate) ? '.45' : '1',
+      saveNext: () => { if (!s.nextDraft.trim() || !s.nextDate) return; const t = s.nextDraft.trim(), dt = s.nextDate; this.setState({ ask: null });
+        this.update(q => { q.next = t; q.due = dt; this.log(q, 'note', 'Prochaine action : ' + t + ' (' + fmtD(dt) + ')'); }, 'Statut et prochaine action enregistrés'); },
+      cancelNext: () => { const prev = s.ask.prev; this.setState({ ask: null }); this.update(q => { q.status = prev; q.tl = q.tl.slice(1); }); },
+      askDelete: s.del, delDraft: s.delDraft, onDelDraft: e => this.setState({ delDraft: e.target.value }), cancelDelete: () => this.setState({ del: false }),
+      delInvalid: s.delDraft.trim().toUpperCase() !== p.nom.toUpperCase(), delOpacity: s.delDraft.trim().toUpperCase() !== p.nom.toUpperCase() ? '.45' : '1',
+      confirmDelete: () => { if (s.delDraft.trim().toUpperCase() !== p.nom.toUpperCase()) return; this.setState({ del: false }); this.notify('Fiche envoyée dans la Corbeille (maquette)'); },
+      waSuggest: (() => { const r = WA_RULES.find(x => x[0](p)); return { name: r[1], why: '— ' + r[2], use: () => this.setState({ wa: '[Modèle Meta : ' + r[1] + ']' }) }; })()
+    };
   }
+}
+// ---- Branchement sur les prospects de la maquette Tableau (même numéro de fiche) ----
+const MO_LIST = ['ENTREPRISE AR', 'VENTURA ÉNERGIE', 'RAPHELEC', 'JLE SERVICES', 'R2M SERVICES', 'AVENIR RENOV'];
+const REGIONS = { 'Hauts-de-France': ['02', '59', '60', '62', '80'], 'Auvergne-Rhône-Alpes': ['01', '03', '07', '15', '26', '38', '42', '43', '63', '69', '73'], 'Occitanie': ['09', '11', '12', '30', '31', '32', '34', '46', '65', '66', '82'], 'Île-de-France': ['75', '77', '78', '91', '92', '93', '94', '95'], 'Normandie': ['27', '76'], 'Centre-Val de Loire': ['28', '41', '45'] };
+const zoneOf = cp => { const d = (cp || '').slice(0, 2); return Object.keys(REGIONS).find(r => REGIONS[r].indexOf(d) >= 0) || 'Autre'; };
+const STEP_OF = { traiter: 0, encours: 0, nrp: 1, rappeler: 1, video: 1, attente: 1, revenir: 1, achat: 1, placer: 2, donner: 2, rdv: 2, rdvtech: 2, replan: 2, devis: 3, jeter: 0, ko: 0 };
+function grabArray(src, name) {
+  const a = src.indexOf('const ' + name + ' ');
+  if (a < 0) throw new Error('bloc ' + name + ' introuvable');
+  let s = src.indexOf('[', a), depth = 0, i = s, q = null;
+  for (; i < src.length; i++) {
+    const c = src[i];
+    if (q) { if (c === '\\') { i++; continue; } if (c === q) q = null; continue; }
+    if (c === "'" || c === '"' || c === String.fromCharCode(96)) { q = c; continue; }
+    if (c === '[') depth++; else if (c === ']') { depth--; if (depth === 0) break; }
+  }
+  return Function('"use strict";return (' + src.slice(s, i + 1) + ');')();
+}
+const EMPTY = { email: '', canal: '', creneau: '', adresse: '', complement: '', acces: '', travaux: '', logement: '', annee: '', surface: '', tableau: '', budget: '', delai: '',
+  civilite: '', raison: '', tel2: '', email2: '', insee: '', nature: '', urgence: '', campagne: '', pCiv: '', pPrenom: '', pNom: '', pTel: '', pEmail: '', pAdresse: '', pCp: '', pVille: '' };
+function fromRow(d) {
+  const [id, mo, type, name, phone, city, cp, owner, status, source, tech, rdvType, rdvDate, next, due, , , , , docLabel, created, modified, avis, ouv] = d;
+  const rich = P0.find(x => x.id === id);
+  const base = rich ? JSON.parse(JSON.stringify(rich)) : Object.assign({}, EMPTY, {
+    prenom: '', tags: source ? [source] : [], demandes: [], dups: 0, mails: [], savs: [], tasks: [], wa: [],
+    chantier: { ref: '[RÉF]', paid: false, valid: false, interv: [] },
+    devis: (ouv > 0 || status === 'devis') ? [{ n: ouv > 0 ? 'DP[N°]' : 'Brouillon', montant: '[MONTANT]', statut: ouv > 0 ? 'Ouvert ' + ouv + ' fois' : 'Brouillon', info: ouv > 0 ? 'Envoyé au client' : 'À finaliser avec les lignes Rexel', ouv: ouv || 0 }] : [],
+    rdvs: rdvDate ? [{ date: rdvDate, type: rdvType || 'RDV', tech: tech || '', etat: rdvDate < NOW ? 'Réalisée' : 'Planifiée', cr: false }] : [],
+    docs: docLabel ? [[docLabel + '.pdf', source]] : [],
+    tl: [['new', 'Système', 'Fiche créée (' + source + ')', fmtD(created)]]
+  });
+  if (rich && rich.prenom) {
+    const re = new RegExp('\\s?' + rich.prenom, 'g');
+    base.wa = base.wa.map(m => [m[0], m[1].replace(re, ''), m[2]]);
+    base.tl = base.tl.map(e => [e[0], e[1], e[2].replace(re, ''), e[3]].concat(e.slice(4)));
+    base.prenom = '';
+  }
+  return Object.assign(base, {
+    id, nom: name, tel: phone, cp, ville: city, owner, status, source, mo: MO_LIST[mo] || base.mo || '', tech: tech || '', typeClient: type === 'Devis' ? 'Devis' : (type || 'Prospect'),
+    next, due: due || NOW, created, modified, avis: Number(avis) || 0, step: STEP_OF[status] != null ? STEP_OF[status] : (base.step || 0), zone: zoneOf(cp)
+  });
+}
+const _baseMount = Component.prototype.componentDidMount;
+Component.prototype.componentDidMount = function () {
+  if (_baseMount) _baseMount.call(this);
+  const pickHash = () => { const id = parseInt((location.hash || '').slice(1), 10); const i = this.state.list.findIndex(x => x.id === id); return i; };
+  const sync = () => { const i = pickHash(); if (i >= 0 && i !== this.state.idx) this.switchTo(i); };
+  fetch('tableau.html').then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); }).then(src => {
+    const list = grabArray(src, 'D').map(fromRow);
+    let idx = list.findIndex(x => x.id === parseInt((location.hash || '').slice(1), 10));
+    if (idx < 0) idx = 0;
+    this.setState({ list, idx, tab: 'act', editing: null });
+    if (!location.hash) history.replaceState(null, '', '#' + list[idx].id);
+  }).catch(e => this.notify('Données du tableau indisponibles : ouvre la page depuis le site'));
+  window.addEventListener('hashchange', sync);
+};
+const _baseSwitch = Component.prototype.switchTo;
+Component.prototype.switchTo = function (idx) {
+  _baseSwitch.call(this, idx);
+  const p = this.state.list[idx];
+  if (p && location.hash !== '#' + p.id) history.replaceState(null, '', '#' + p.id);
+  if (p) document.title = p.nom + ' · Fiche client · Entreprise AR';
+  window.scrollTo(0, 0);
+};
 
-  function step(n) { var i = D.indexOf(cur) + n; if (D[i]) location.hash = D[i].id; }
-  document.getElementById('prev').onclick = function () { step(-1); };
-  document.getElementById('next').onclick = function () { step(1); };
-  document.getElementById('back').onclick = function (e) { if (document.referrer && document.referrer.indexOf(location.host) >= 0 && history.length > 1) { e.preventDefault(); history.back(); } };
-  window.addEventListener('hashchange', function () { tab = 'infos'; show(); window.scrollTo(0, 0); });
-  load();
-})();
+ARMount(Component);
 </script>
 </body>
 </html>
