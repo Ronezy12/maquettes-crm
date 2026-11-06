@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Liste des prospects · 3 maquettes · Entreprise AR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F5F7;--surface:#FFFFFF;--line:#E5E5EA;--ink:#1D1D1F;--muted:#6E6E73;--primary:#1D3FBF;--tint:#E8EDFD;--accent:#FFC93C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:1120px;margin:0 auto;padding:48px 24px 64px}
+header{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+header img{border-radius:12px;background:#fff}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+h1{margin:4px 0 0;font-size:34px;line-height:1.15;letter-spacing:-.01em}
+.lead{font-size:17px;color:#3A3A3C;max-width:720px;line-height:1.55;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink);background:var(--surface);border-radius:16px;box-shadow:0 0 0 1px var(--line);padding:22px;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 0 0 2px var(--primary),0 12px 30px rgba(0,0,0,.08);transform:translateY(-2px)}
+.card:focus-visible{outline:3px solid #4C6EF0;outline-offset:3px}
+.tag{align-self:flex-start;font-size:12px;font-weight:800;border-radius:999px;padding:4px 10px;background:var(--tint);color:var(--primary)}
+.card h2{margin:0;font-size:21px}
+.card p{margin:0;color:#3A3A3C;font-size:15px;line-height:1.5}
+.card ul{margin:0;padding-left:18px;color:#3A3A3C;font-size:14px;line-height:1.6}
+.go{margin-top:auto;font-weight:700;color:var(--primary)}
+.note{margin-top:28px;font-size:13px;color:var(--muted);line-height:1.6}
+@media (max-width:860px){.grid{grid-template-columns:1fr}h1{font-size:28px}}
+@media (prefers-reduced-motion: reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="logo.png" alt="Logo Entreprise AR" width="56" height="56">
+    <div>
+      <div class="kicker">Refonte du CRM · Entreprise AR</div>
+      <h1>Liste des prospects : 3 façons de travailler</h1>
+    </div>
+  </header>
+  <p class="lead">Les mêmes fonctions (statuts, filtres, actions groupées, WhatsApp, export Excel), présentées de trois manières. Ouvre chaque maquette, essaie-la, et dis laquelle te fait gagner le plus de temps.</p>
+  <div class="grid">
+    <a class="card" href="tableau.html">
+      <span class="tag">Tableau</span>
+      <h2>Tout voir, tout filtrer</h2>
+      <p>Le tableau complet, pour qui aime avoir la main sur chaque colonne.</p>
+      <ul>
+        <li>Filtres rapides, par colonne et sur mesure</li>
+        <li>Colonnes déplaçables et élargissables</li>
+        <li>Statut et champs modifiables dans la ligne</li>
+        <li>Session d’appels, mode sombre</li>
+      </ul>
+      <span class="go">Ouvrir le tableau ›</span>
+    </a>
+    <a class="card" href="file.html">
+      <span class="tag">File</span>
+      <h2>Traiter sans quitter l’écran</h2>
+      <p>Une file à gauche, la fiche à droite : on enchaîne les appels.</p>
+      <ul>
+        <li>Files d’attente : à traiter, en retard, devis ouverts…</li>
+        <li>5 boutons de résultat → relance et fiche suivante</li>
+        <li>Raccourcis J / K et 1 à 5</li>
+        <li>Compteur de fiches traitées</li>
+      </ul>
+      <span class="go">Ouvrir la file ›</span>
+    </a>
+    <a class="card" href="planning.html">
+      <span class="tag">Planning</span>
+      <h2>Voir quand relancer</h2>
+      <p>Une colonne par jour : on glisse une carte pour la reprogrammer.</p>
+      <ul>
+        <li>En retard, aujourd’hui, demain, semaine…</li>
+        <li>Glisser-déposer pour changer la date</li>
+        <li>« Fait », « +1 j », « NRP » sur chaque carte</li>
+        <li>WhatsApp à toute une colonne</li>
+      </ul>
+      <span class="go">Ouvrir le planning ›</span>
+    </a>
+  </div>
+  <p class="note">Maquettes de démonstration : toutes les données (noms, téléphones, villes) sont fictives et rien n’est relié au vrai CRM. Les envois WhatsApp, mails et SMS sont simulés.</p>
+</main>
+</body>
+</html>

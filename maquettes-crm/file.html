@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>File de traitement · Maquettes Entreprise AR</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;background:#F5F5F7}
+:root{--bg:#F5F5F7;--surface:#FFFFFF;--fill:#F0F0F3;--fill-2:#F7F7F9;--line:#E5E5EA;--line-strong:#D2D2D7;--ink:#1D1D1F;--ink-2:#3A3A3C;--muted:#6E6E73;--tint:#E8EDFD;--primary:#1D3FBF;--wa:#1A7F45;--danger:#C5221F;--warn:#B25E00;--ok:#1C6B3D}
+button,input,select,textarea{font-family:inherit}
+button{cursor:pointer}
+a{color:var(--primary)}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #4C6EF0;outline-offset:2px}
+.sel{border:0;background:var(--surface);border-radius:8px;padding:7px 10px;font-size:13px;font-weight:600;color:var(--ink);box-shadow:0 0 0 1px var(--line-strong)}
+.btn{border:0;background:var(--surface);color:var(--ink);border-radius:8px;padding:7px 12px;font-size:13px;font-weight:600;box-shadow:0 0 0 1px var(--line-strong);display:inline-flex;align-items:center;gap:6px;white-space:nowrap;text-decoration:none}
+.lab{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.nav{border:0;background:transparent;width:100%;text-align:left;display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;font-size:13px;font-weight:500;color:var(--ink)}
+.nav:hover{background:var(--fill)}
+.item{border:0;width:100%;text-align:left;background:var(--surface);padding:12px 14px 12px 12px;display:flex;gap:10px;align-items:flex-start;border-bottom:1px solid var(--line)}
+.item:hover{background:var(--fill-2)}
+.res{border:0;border-radius:12px;padding:14px 10px;font-size:14px;font-weight:700;color:#fff;display:flex;flex-direction:column;align-items:center;gap:4px;min-height:84px;justify-content:center}
+.res:hover{filter:brightness(1.08)}
+.kbd{font-size:11px;font-weight:700;background:rgba(255,255,255,.22);border-radius:5px;padding:1px 6px}
+.chip{border:0;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700}
+@keyframes arIn{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+@keyframes arPop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes arShrink{from{width:100%}to{width:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+<style>
+#ar-switch{position:fixed;left:16px;bottom:16px;z-index:50;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(29,29,31,.92);box-shadow:0 10px 30px rgba(0,0,0,.25);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif}
+#ar-switch a{color:#fff;text-decoration:none;font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px}
+#ar-switch a[aria-current]{background:#FFC93C;color:#1D1D1F}
+#ar-switch a:focus-visible{outline:3px solid #4C6EF0;outline-offset:2px}
+#ar-demo{position:fixed;right:16px;bottom:16px;z-index:50;font:600 11px -apple-system,system-ui,sans-serif;color:#6E6E73;background:rgba(255,255,255,.92);border-radius:999px;padding:6px 10px;box-shadow:0 0 0 1px #E5E5EA}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<nav id="ar-switch" aria-label="Changer de maquette"><a href="index.html">‹ Accueil</a><a href="tableau.html">Tableau</a><a href="file.html" aria-current="page">File de traitement</a><a href="planning.html">Planning des relances</a></nav>
+<div id="ar-demo">Maquette · données fictives</div>
+<script>window.AR_TPL = [["div", {"style": "min-height: 1100px; background: var(--bg); color: var(--ink); display: flex; flex-direction: column; position: relative;"}, [["header", {"style": "background: var(--surface); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; padding: 10px 20px; flex-wrap: wrap;"}, [["img", {"src": "logo.png", "alt": "Logo Entreprise AR", "width": "34", "height": "34", "style": "border-radius: 8px; background: #FFFFFF;"}, []], ["b", {"style": "font-size: 16px;"}, ["Traitement"]], ["div", {"role": "group", "aria-label": "Affichage", "style": "display: inline-flex; background: var(--fill); border-radius: 8px; padding: 2px;"}, [["span", {"style": "border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 700; background: var(--surface); box-shadow: 0 1px 3px rgba(0,0,0,.12);"}, ["File"]], ["a", {"href": "planning.html", "style": "border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; color: var(--ink); text-decoration: none;"}, ["Planning"]], ["a", {"href": "tableau.html", "style": "border-radius: 6px; padding: 5px 10px; font-size: 12px; font-weight: 600; color: var(--ink); text-decoration: none;"}, ["Tableau"]]]], ["label", {"style": "display: flex; align-items: center; gap: 8px; background: var(--fill); border-radius: 8px; padding: 7px 10px; flex: 1 1 260px; max-width: 360px;"}, [["svg", {"width": "14", "height": "14", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2.2", "aria-hidden": "true", "style": "color: var(--muted);"}, [["circle", {"cx": "11", "cy": "11", "r": "7"}, []], ["path", {"d": "m20 20-3.5-3.5"}, []]]], ["input", {"type": "search", "value": "{{q}}", "onchange": "{{onQ}}", "placeholder": "Nom, ville, téléphone, n° fiche", "aria-label": "Rechercher", "style": "border: 0; background: transparent; outline: none; font-size: 13px; width: 100%; color: var(--ink);"}, []]]], ["select", {"class": "sel", "value": "{{type}}", "onchange": "{{onType}}", "aria-label": "Type de fiche"}, [["sc-for", {"list": "{{typeOpts}}", "as": "o", "hint-placeholder-count": "6"}, [["option", {"value": "{{o.v}}"}, ["{{o.t}}"]]]]]], ["select", {"class": "sel", "value": "{{owner}}", "onchange": "{{onOwner}}", "aria-label": "Commercial"}, [["option", {"value": ""}, ["Tous les commerciaux"]], ["option", {}, ["Aharon"]], ["option", {}, ["Raphael"]], ["option", {}, ["Laura"]], ["option", {}, ["Mick"]]]], ["select", {"class": "sel", "value": "{{source}}", "onchange": "{{onSource}}", "aria-label": "Source"}, [["option", {"value": ""}, ["Toutes les sources"]], ["option", {}, ["Local Services"]], ["option", {}, ["Landing page"]], ["option", {}, ["Site internet"]], ["option", {}, ["Recommandation"]], ["option", {}, ["Parrainage"]]]], ["span", {"style": "margin-left: auto; display: flex; gap: 8px;"}, [["button", {"class": "btn", "onclick": "{{exportList}}"}, ["Exporter Excel"]], ["button", {"class": "btn", "style": "background: var(--primary); color: #fff; box-shadow: none;"}, ["+ Nouveau"]]]]]], ["div", {"style": "display: grid; grid-template-columns: 230px 380px minmax(0, 1fr); flex-grow: 1; min-height: 0;"}, [["aside", {"style": "background: var(--fill-2); border-right: 1px solid var(--line); padding: 14px 10px; display: flex; flex-direction: column; gap: 2px;"}, [["div", {"class": "lab", "style": "padding: 0 10px 6px;"}, ["Files d’attente"]], ["sc-for", {"list": "{{views}}", "as": "v", "hint-placeholder-count": "8"}, [["button", {"class": "nav", "onclick": "{{v.pick}}", "style": "background: {{v.bg}}; color: {{v.fg}}; font-weight: {{v.weight}};"}, [["span", {"style": "width: 8px; height: 8px; border-radius: 50%; background: {{v.dot}};"}, []], ["span", {"style": "flex-grow: 1;"}, ["{{v.label}}"]], ["span", {"style": "font-size: 12px; font-weight: 700; opacity: .85;"}, ["{{v.count}}"]]]]]], ["div", {"class": "lab", "style": "padding: 14px 10px 6px;"}, ["Par étape"]], ["sc-for", {"list": "{{steps}}", "as": "g", "hint-placeholder-count": "5"}, [["button", {"class": "nav", "onclick": "{{g.pick}}", "style": "background: {{g.bg}}; color: {{g.fg}};"}, [["svg", {"width": "14", "height": "14", "viewBox": "0 0 24 24", "fill": "none", "stroke": "{{g.color}}", "stroke-width": "2.2", "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true"}, [["path", {"d": "{{g.icon}}"}, []]]], ["span", {"style": "flex-grow: 1;"}, ["{{g.label}}"]], ["span", {"style": "font-size: 12px; opacity: .8;"}, ["{{g.count}}"]]]]]], ["div", {"style": "margin-top: auto; background: var(--surface); border-radius: 12px; padding: 12px; box-shadow: 0 0 0 1px var(--line);"}, [["div", {"class": "lab"}, ["Aujourd’hui"]], ["div", {"style": "font-size: 22px; font-weight: 800; margin-top: 2px;"}, ["{{doneCount}} ", ["span", {"style": "font-size: 13px; font-weight: 600; color: var(--muted);"}, ["traités"]]]], ["div", {"style": "height: 6px; border-radius: 3px; background: var(--fill); margin-top: 8px;"}, [["div", {"style": "width: {{donePct}}; height: 6px; border-radius: 3px; background: var(--ok); transition: width .3s;"}, []]]], ["div", {"style": "font-size: 12px; color: var(--muted); margin-top: 6px;"}, ["Objectif : 20 fiches"]]]]]], ["section", {"tabindex": "0", "role": "region", "aria-label": "File de prospects (J/K pour naviguer, 1 à 5 pour le résultat)", "onkeydown": "{{onKey}}", "style": "background: var(--surface); border-right: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; outline: none;"}, [["div", {"style": "display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-bottom: 1px solid var(--line);"}, [["input", {"type": "checkbox", "checked": "{{allChecked}}", "onchange": "{{toggleAll}}", "aria-label": "Tout sélectionner"}, []], ["b", {"style": "font-size: 15px; flex-grow: 1;"}, ["{{viewTitle}} ", ["span", {"style": "color: var(--muted); font-weight: 600;"}, ["{{count}}"]]]], ["select", {"class": "sel", "value": "{{sort}}", "onchange": "{{onSort}}", "aria-label": "Trier", "style": "padding: 5px 8px; font-size: 12px;"}, [["option", {"value": "prio"}, ["Priorité"]], ["option", {"value": "due"}, ["Échéance"]], ["option", {"value": "created"}, ["Plus récents"]]]]]], ["div", {"style": "flex-grow: 1; overflow: auto;"}, [["sc-for", {"list": "{{queue}}", "as": "r", "hint-placeholder-count": "10"}, [["div", {"style": "display: flex; align-items: stretch; box-shadow: inset 3px 0 0 {{r.bar}}; background: {{r.bg}};"}, [["label", {"style": "display: flex; align-items: flex-start; padding: 14px 0 0 12px; cursor: pointer;"}, [["input", {"type": "checkbox", "checked": "{{r.checked}}", "onchange": "{{r.toggle}}", "aria-label": "Sélectionner {{r.name}}"}, []]]], ["button", {"class": "item", "onclick": "{{r.pick}}", "style": "background: transparent;"}, [["span", {"style": "flex-grow: 1; min-width: 0;"}, [["span", {"style": "display: flex; align-items: center; gap: 6px;"}, [["b", {"style": "font-size: 14px;"}, ["{{r.name}}"]], ["span", {"style": "font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"}, ["{{r.city}}"]], ["sc-if", {"value": "{{r.hot}}", "hint-placeholder-val": "{{false}}"}, [["span", {"style": "font-size: 10px; font-weight: 800; background: #FFF4D1; color: #6B4A00; border-radius: 4px; padding: 1px 5px;"}, ["DEVIS OUVERT"]]]]]], ["span", {"style": "display: block; font-size: 13px; color: var(--ink-2); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"}, ["{{r.next}}"]], ["span", {"style": "display: flex; align-items: center; gap: 6px; margin-top: 6px;"}, [["span", {"style": "display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; border-radius: 999px; padding: 2px 8px; background: {{r.sBg}}; color: {{r.sFg}};"}, [["svg", {"width": "11", "height": "11", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "2.4", "stroke-linecap": "round", "stroke-linejoin": "round", "aria-hidden": "true"}, [["path", {"d": "{{r.icon}}"}, []]]], "{{r.status}}"]], ["span", {"style": "font-size: 11px; font-weight: 700; color: {{r.dueC}};"}, ["{{r.dueTxt}}"]]]]]]]]]]]], ["sc-if", {"value": "{{empty}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "padding: 60px 20px; text-align: center;"}, [["div", {"style": "width: 56px; height: 56px; border-radius: 50%; background: #E3F4EA; color: var(--ok); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 10px;"}, [["svg", {"width": "26", "height": "26", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "3", "stroke-linecap": "round", "aria-hidden": "true"}, [["path", {"d": "m5 12 5 5 9-10"}, []]]]]], ["div", {"style": "font-size: 16px; font-weight: 700;"}, ["File vide, bravo !"]], ["div", {"style": "font-size: 13px; color: var(--muted); margin-top: 4px;"}, ["Choisis une autre file à gauche."]]]]]]]], ["sc-if", {"value": "{{hasSel}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "background: #1D1D1F; color: #fff; padding: 10px 12px; display: flex; gap: 6px; align-items: center; flex-wrap: wrap;"}, [["b", {"style": "font-size: 13px; margin-right: 4px;"}, ["{{selCount}} sélectionnés"]], ["select", {"value": "", "onchange": "{{bulkStatus}}", "aria-label": "Changer le statut", "style": "border: 0; background: rgba(255,255,255,.14); color: #fff; border-radius: 7px; padding: 6px 8px; font-size: 12px; font-weight: 600;"}, [["option", {"value": "", "style": "color: #1D1D1F;"}, ["Statut…"]], ["sc-for", {"list": "{{statusOptions}}", "as": "o", "hint-placeholder-count": "5"}, [["option", {"value": "{{o.k}}", "style": "color: #1D1D1F;"}, ["{{o.t}}"]]]]]], ["button", {"onclick": "{{bulkWa}}", "style": "border: 0; background: var(--wa); color: #fff; border-radius: 7px; padding: 6px 10px; font-size: 12px; font-weight: 700;"}, ["WhatsApp"]], ["button", {"onclick": "{{exportSel}}", "style": "border: 0; background: rgba(255,255,255,.14); color: #fff; border-radius: 7px; padding: 6px 10px; font-size: 12px; font-weight: 600;"}, ["Exporter"]], ["button", {"onclick": "{{clearSel}}", "aria-label": "Annuler la sélection", "style": "margin-left: auto; border: 0; background: transparent; color: #fff; font-size: 16px;"}, ["×"]]]]]]]], ["main", {"style": "padding: 20px 24px; display: flex; flex-direction: column; gap: 16px; min-width: 0;"}, [["sc-if", {"value": "{{hasCur}}", "hint-placeholder-val": "{{true}}"}, [["div", {"style": "display: flex; flex-direction: column; gap: 16px; animation: arIn .25s ease-out;"}, [["div", {"style": "display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap;"}, [["span", {"style": "width: 52px; height: 52px; border-radius: 14px; background: var(--primary); color: #FFC93C; font-weight: 800; font-size: 18px; display: inline-flex; align-items: center; justify-content: center;"}, ["{{c.ini}}"]], ["div", {"style": "flex: 1 1 280px; min-width: 0;"}, [["div", {"style": "display: flex; align-items: center; gap: 10px; flex-wrap: wrap;"}, [["h1", {"style": "margin: 0; font-size: 26px; font-weight: 700;"}, ["{{c.name}}"]], ["select", {"value": "{{c.status}}", "onchange": "{{c.onStatus}}", "aria-label": "Statut", "style": "border: 0; border-radius: 999px; padding: 5px 10px; font-size: 13px; font-weight: 700; background: {{c.sBg}}; color: {{c.sFg}};"}, [["sc-for", {"list": "{{statusOptions}}", "as": "o", "hint-placeholder-count": "5"}, [["option", {"value": "{{o.k}}"}, ["{{o.t}}"]]]]]]]], ["div", {"style": "font-size: 13px; color: var(--muted); margin-top: 4px; display: flex; gap: 12px; flex-wrap: wrap;"}, [["span", {}, ["#{{c.id}}"]], ["span", {}, ["{{c.city}}"]], ["span", {}, ["{{c.source}}"]], ["span", {}, ["Commercial : {{c.owner}}"]], ["span", {}, ["Créé le {{c.created}}"]]]]]], ["a", {"href": "#fiche", "class": "btn"}, ["Fiche complète ›"]]]], ["div", {"style": "display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: 14px; box-shadow: 0 0 0 1px var(--line); padding: 12px 14px; flex-wrap: wrap;"}, [["span", {"style": "font-size: 24px; font-weight: 700; letter-spacing: .02em; flex-grow: 1;"}, ["{{c.phone}}"]], ["button", {"style": "border: 0; background: var(--primary); color: #fff; border-radius: 10px; padding: 11px 20px; font-size: 14px; font-weight: 700;"}, ["Appeler"]], ["button", {"onclick": "{{goWa}}", "style": "border: 0; background: var(--wa); color: #fff; border-radius: 10px; padding: 11px 16px; font-size: 14px; font-weight: 700;"}, ["WhatsApp"]], ["button", {"class": "btn", "style": "padding: 11px 14px;"}, ["Mail"]], ["button", {"class": "btn", "style": "padding: 11px 14px;"}, ["SMS"]], ["button", {"class": "btn", "style": "padding: 11px 14px;"}, ["+ Devis"]]]], ["div", {}, [["div", {"style": "display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px;"}, [["span", {"class": "lab"}, ["Résultat de l’appel"]], ["span", {"style": "font-size: 12px; color: var(--muted);"}, ["un clic = statut, relance programmée, puis fiche suivante"]]]], ["div", {"style": "display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px;"}, [["sc-for", {"list": "{{results}}", "as": "x", "hint-placeholder-count": "5"}, [["button", {"class": "res", "onclick": "{{x.pick}}", "style": "background: {{x.bg}};"}, [["span", {}, ["{{x.label}}"]], ["span", {"style": "font-size: 11px; font-weight: 500; opacity: .9;"}, ["{{x.sub}}"]], ["span", {"class": "kbd"}, ["{{x.key}}"]]]]]]]]]], ["div", {"style": "display: flex; align-items: center; gap: 8px; background: var(--fill-2); border-radius: 12px; padding: 10px 12px; flex-wrap: wrap;"}, [["span", {"class": "lab", "style": "margin-right: 4px;"}, ["Prochaine action"]], ["input", {"value": "{{c.next}}", "onchange": "{{c.onNext}}", "aria-label": "Prochaine action", "style": "flex: 1 1 220px; border: 0; box-shadow: 0 0 0 1px var(--line-strong); border-radius: 8px; padding: 7px 10px; font-size: 13px; background: var(--surface);"}, []], ["sc-for", {"list": "{{dueChips}}", "as": "d", "hint-placeholder-count": "4"}, [["button", {"class": "chip", "onclick": "{{d.pick}}", "style": "background: {{d.bg}}; color: {{d.fg}};"}, ["{{d.label}}"]]]]]], ["div", {"style": "background: var(--surface); border-radius: 14px; box-shadow: 0 0 0 1px var(--line); overflow: hidden;"}, [["div", {"role": "tablist", "style": "display: flex; gap: 18px; padding: 0 16px; border-bottom: 1px solid var(--line);"}, [["sc-for", {"list": "{{tabs}}", "as": "t", "hint-placeholder-count": "4"}, [["button", {"role": "tab", "aria-selected": "{{t.on}}", "onclick": "{{t.pick}}", "style": "border: 0; background: transparent; padding: 12px 2px; font-size: 14px; font-weight: 600; color: {{t.fg}}; box-shadow: inset 0 -2px 0 {{t.line}}; display: inline-flex; gap: 6px; align-items: center;"}, ["{{t.label}} ", ["span", {"style": "font-size: 11px; font-weight: 700; border-radius: 999px; padding: 1px 7px; background: {{t.cBg}}; color: {{t.cFg}};"}, ["{{t.count}}"]]]]]]]], ["div", {"style": "padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;"}, [["sc-for", {"list": "{{feed}}", "as": "e", "hint-placeholder-count": "3"}, [["div", {"style": "display: flex; gap: 10px; align-items: flex-start; justify-content: {{e.justify}};"}, [["div", {"style": "max-width: 80%; background: {{e.bg}}; border-radius: 10px; padding: 8px 11px; font-size: 13px;"}, [["div", {}, ["{{e.text}}"]], ["div", {"style": "font-size: 11px; color: var(--muted); margin-top: 2px;"}, ["{{e.meta}}"]]]]]]]], ["div", {"style": "display: flex; gap: 8px;"}, [["input", {"value": "{{draft}}", "onchange": "{{onDraft}}", "placeholder": "{{draftPh}}", "aria-label": "Écrire", "style": "flex-grow: 1; border: 0; box-shadow: 0 0 0 1px var(--line-strong); border-radius: 8px; padding: 9px 10px; font-size: 13px; background: var(--surface); color: var(--ink);"}, []], ["button", {"onclick": "{{send}}", "style": "border: 0; background: {{sendBg}}; color: #fff; border-radius: 8px; padding: 8px 16px; font-weight: 700; font-size: 13px;"}, ["{{sendLabel}}"]]]]]]]]]]]], ["sc-if", {"value": "{{noCur}}", "hint-placeholder-val": "{{false}}"}, [["div", {"style": "margin: auto; text-align: center; color: var(--muted); font-size: 14px;"}, ["Choisis une fiche dans la file."]]]], ["div", {"style": "font-size: 12px; color: var(--muted);"}, ["Raccourcis : clique dans la file, puis J / K ou ↑ ↓ pour changer de fiche, 1 à 5 pour le résultat de l’appel, W pour WhatsApp."]]]]]], ["sc-if", {"value": "{{hasToast}}", "hint-placeholder-val": "{{false}}"}, [["div", {"role": "status", "style": "position: absolute; top: 66px; left: 0; right: 0; margin: 0 auto; width: max-content; z-index: 30; animation: arPop .2s ease-out; background: var(--surface); border-radius: 14px; box-shadow: 0 16px 40px rgba(0,0,0,.18), 0 0 0 1px var(--line); min-width: 320px; overflow: hidden;"}, [["div", {"style": "display: flex; align-items: center; gap: 12px; padding: 12px 14px;"}, [["span", {"style": "width: 26px; height: 26px; border-radius: 50%; background: #E3F4EA; color: var(--ok); display: inline-flex; align-items: center; justify-content: center;"}, [["svg", {"width": "14", "height": "14", "viewBox": "0 0 24 24", "fill": "none", "stroke": "currentColor", "stroke-width": "3", "stroke-linecap": "round", "aria-hidden": "true"}, [["path", {"d": "m5 12 5 5 9-10"}, []]]]]], ["div", {"style": "flex-grow: 1; font-size: 13px;"}, [["b", {}, ["{{toastText}}"]]]], ["sc-if", {"value": "{{toastUndo}}", "hint-placeholder-val": "{{true}}"}, [["button", {"onclick": "{{undo}}", "style": "border: 0; background: var(--fill); color: var(--primary); border-radius: 8px; padding: 6px 10px; font-weight: 700; font-size: 13px;"}, ["Annuler"]]]]]], ["div", {"style": "height: 3px; background: var(--fill);"}, [["div", {"style": "height: 3px; background: var(--ok); animation: arShrink 3s linear forwards;"}, []]]]]]]]]]];</script>
+<script src="runtime.js"></script>
+<script>
+
+const NOW = '2026-11-03';
+const pad = n => (n < 10 ? '0' : '') + n;
+const addDays = (s, n) => { const t = new Date(Date.parse(s) + n * 86400000); return t.getUTCFullYear() + '-' + pad(t.getUTCMonth() + 1) + '-' + pad(t.getUTCDate()); };
+const dd = (a, b) => Math.round((Date.parse(a) - Date.parse(b)) / 86400000);
+const fmtD = s => s ? s.slice(8, 10) + '/' + s.slice(5, 7) : '';
+const ICONS = { Nouveaux: 'M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z', Contact: 'M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2',
+  Intervention: 'M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z', Devis: 'M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9zM14 3v6h6M8 13h8M8 17h5', 'Clôture': 'M3 4h18v4H3zM5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8M10 12h4' };
+const ST = [['Nouveaux', [['traiter', 'À traiter'], ['encours', 'En cours de traitement']], ['#FDECEC', '#A1262B']],
+  ['Contact', [['nrp', 'NRP – message laissé'], ['rappeler', 'À rappeler'], ['video', 'Appel vidéo demandé'], ['attente', 'En attente retour client'], ['revenir', 'Client qui doit revenir vers nous'], ['achat', 'Projet d’achat']], ['#FFF1E0', '#8A4300']],
+  ['Intervention', [['placer', 'À placer'], ['donner', 'Donner au tech'], ['rdv', 'RDV pris'], ['rdvtech', 'RDV pris par le technicien'], ['replan', 'Replanifier']], ['#E3F4EA', '#1C6B3D']],
+  ['Devis', [['devis', 'Devis à faire']], ['#E8EDFD', '#1D3FBF']], ['Clôture', [['jeter', 'Appeler pour jeter'], ['ko', 'KO']], ['#F0F0F3', '#48484A']]];
+const INFO = {}; ST.forEach(g => g[1].forEach(x => { INFO[x[0]] = { label: x[1], group: g[0], pill: g[2], icon: ICONS[g[0]] }; }));
+// id, nom, ville, tél, commercial, statut, source, type, prochaine action, échéance, WA, docs, commentaires, devis ouvert, créé
+const D = [
+  [9648, 'DUPONT', 'Lyon', '06 00 •• •• 35', 'Raphael', 'traiter', 'Local Services', 'Prospect', 'Premier appel', '2026-11-02', 0, 1, 2, 0, '2026-11-02'],
+  [9645, 'MARTIN', 'Lille', '06 00 •• •• 36', 'Raphael', 'traiter', 'Landing page', 'Prospect', 'Premier appel', '2026-11-03', 1, 1, 5, 0, '2026-11-02'],
+  [9644, 'BERNARD', 'Toulouse', '06 00 •• •• 37', 'Raphael', 'traiter', 'Landing page', 'Prospect', 'Premier appel', '2026-11-03', 1, 0, 0, 0, '2026-11-02'],
+  [9640, 'PETIT', 'Nantes', '06 00 •• •• 38', 'Raphael', 'traiter', 'Landing page', 'Prospect', 'Rappeler', '2026-11-04', 4, 0, 2, 0, '2026-11-02'],
+  [9626, 'ROBERT', 'Bordeaux', '06 00 •• •• 39', 'Raphael', 'rdv', 'Landing page', 'Prospect', 'Récupérer le compte rendu', '2026-11-03', 1, 1, 1, 0, '2026-11-02'],
+  [9623, 'RICHARD', 'Rennes', '06 00 •• •• 40', 'Raphael', 'attente', 'Landing page', 'Devis', 'Relancer le devis', '2026-11-05', 1, 1, 1, 3, '2026-11-02'],
+  [9607, 'DURAND', 'Reims', '06 00 •• •• 41', 'Raphael', 'encours', 'Local Services', 'Prospect', 'Qualifier le besoin', '2026-11-03', 0, 0, 0, 0, '2026-10-29'],
+  [9606, 'LEROY', 'Dijon', '06 00 •• •• 42', 'Raphael', 'rdvtech', 'Landing page', 'Prospect', 'Préparer le devis', '2026-11-01', 1, 1, 2, 0, '2026-10-29'],
+  [9570, 'MOREL', 'Angers', '06 00 •• •• 43', 'Aharon', 'placer', 'Local Services', 'Prospect', 'Trouver un technicien', '2026-10-30', 0, 0, 0, 0, '2026-10-28'],
+  [9563, 'SIMON', 'Tours', '06 00 •• •• 44', 'Raphael', 'nrp', 'Local Services', 'Prospect', '2e appel', '2026-11-03', 1, 0, 0, 0, '2026-10-28'],
+  [9540, 'LEFEBVRE', 'Rouen', '06 00 •• •• 45', 'Aharon', 'rdv', 'Local Services', 'Prospect', 'Suivi de la prévisite', '2026-11-04', 1, 0, 0, 0, '2026-10-27'],
+  [9520, 'MICHEL', 'Nîmes', '06 00 •• •• 46', 'Raphael', 'donner', 'Landing page', 'Prospect', 'Confirmer avec le tech', '2026-10-28', 7, 1, 10, 0, '2026-10-27'],
+  [9514, 'GARCIA', 'Metz', '06 00 •• •• 47', 'Aharon', 'traiter', 'Site internet', 'Prospect', 'Rappeler à 17 h', '2026-11-03', 0, 0, 7, 0, '2026-10-27'],
+  [9475, 'ROUX', 'Grenoble', '06 00 •• •• 48', 'Aharon', 'encours', 'Local Services', 'Devis', 'Relancer le devis', '2026-11-04', 14, 0, 4, 2, '2026-10-26'],
+  [9451, 'GIRARD', 'Caen', '06 00 •• •• 49', 'Aharon', 'nrp', 'Local Services', 'Prospect', '3e tentative d’appel', '2026-10-31', 16, 0, 7, 0, '2026-10-23'],
+  [9432, 'LAMBERT', 'Pau', '06 00 •• •• 50', 'Raphael', 'rappeler', 'Landing page', 'Prospect', 'Rappeler', '2026-11-04', 1, 1, 3, 0, '2026-10-22'],
+  [9365, 'ROUSSEL', 'Montpellier', '06 00 •• •• 51', 'Aharon', 'achat', 'Recommandation', 'Prospect', 'Rappeler', '2026-11-06', 10, 0, 5, 0, '2026-10-21'],
+  [9352, 'VINCENT', 'Créteil', '06 00 •• •• 52', 'Aharon', 'devis', 'Parrainage', 'Prospect', 'Envoyer le devis', '2026-10-29', 22, 2, 18, 0, '2026-10-21'],
+  [9317, 'MULLER', 'Versailles', '06 00 •• •• 53', 'Laura', 'nrp', 'Landing page', 'Prospect', '3e tentative d’appel', '2026-11-03', 0, 0, 0, 0, '2026-10-20'],
+  [9033, 'ANDRE', 'Valence', '06 00 •• •• 54', 'Aharon', 'video', 'Site internet', 'Prospect', 'Appel vidéo', '2026-11-05', 1, 0, 0, 0, '2026-10-08'],
+  [8956, 'MERCIER', 'Chartres', '06 00 •• •• 55', 'Raphael', 'devis', 'Landing page', 'Prospect', 'Faire le devis', '2026-11-04', 7, 1, 9, 0, '2026-10-06'],
+  [8401, 'GUERIN', '[Ville]', '06 00 •• •• 56', 'Aharon', 'rdvtech', 'Landing page', 'Facture', 'Encaisser le solde', '2026-11-05', 6, 1, 2, 0, '2026-10-29'],
+  [8404, 'CHEVALIER', '[Ville]', '06 00 •• •• 57', 'Raphael', 'rdv', 'Local Services', 'Pose', 'Confirmer la pose', '2026-11-05', 3, 0, 1, 0, '2026-10-12']
+];
+const VIEWS = [
+  ['now', 'À traiter maintenant', '#C5221F', r => (r.due && dd(r.due, NOW) <= 0) || r.devisOpened > 0],
+  ['new', 'Nouveaux leads', '#1D3FBF', r => r.status === 'traiter' && dd(NOW, r.created) <= 2],
+  ['today', 'Rappels du jour', '#B25E00', r => r.due === NOW],
+  ['late', 'En retard', '#C5221F', r => r.due && dd(r.due, NOW) < 0],
+  ['hot', 'Devis ouverts', '#8A6200', r => r.devisOpened > 0],
+  ['nrp', 'NRP à relancer', '#8A4300', r => r.status === 'nrp'],
+  ['noaction', 'Sans prochaine action', '#6E6E73', r => !r.next],
+  ['all', 'Toutes les fiches', '#6E6E73', r => true]
+];
+class Component extends DCLogic {
+  constructor(p) {
+    super(p);
+    this.state = { over: {}, view: 'now', step: '', q: '', type: 'Prospect', owner: '', source: '', sort: 'prio', cur: 9520, sel: {}, done: 7, tab: 'act', draft: '', toast: null, extra: {} };
+  }
+  rec(d) { const o = this.state.over[d[0]] || {}; return Object.assign({ id: d[0], name: d[1], city: d[2], phone: d[3], owner: d[4], status: d[5], source: d[6], type: d[7], next: d[8], due: d[9], wa: d[10], docs: d[11], com: d[12], devisOpened: d[13], created: d[14] }, o); }
+  notify(text, before) {
+    clearTimeout(this.tHide); const id = (this.tid = (this.tid || 0) + 1);
+    this.setState({ toast: null }); setTimeout(() => this.setState({ toast: { text, before, id } }), 30);
+    this.tHide = setTimeout(() => { if (this.state.toast && this.state.toast.id === id) this.setState({ toast: null }); }, 3030);
+  }
+  componentWillUnmount() { clearTimeout(this.tHide); }
+  patch(ids, p, text, extraState) {
+    const before = { over: this.state.over, cur: this.state.cur, done: this.state.done };
+    const over = Object.assign({}, this.state.over); ids.forEach(id => { over[id] = Object.assign({}, over[id], p); });
+    this.setState(Object.assign({ over }, extraState || {})); this.notify(text, before);
+  }
+  list() {
+    const s = this.state; const q = s.q.trim().toLowerCase();
+    const all = D.map(d => this.rec(d));
+    const scope = all.filter(r => (s.type === 'tous' || r.type === s.type) && (!s.owner || r.owner === s.owner) && (!s.source || r.source === s.source)
+      && (!q || (r.name + ' ' + r.city + ' ' + r.phone + ' ' + r.id).toLowerCase().indexOf(q) >= 0));
+    return { all, scope };
+  }
+  result(kind, due) {
+    const s = this.state; const { scope } = this.list(); const q = this.queueOf(scope); const i = q.findIndex(r => r.id === s.cur); const cur = q[i]; if (!cur) return;
+    const nextRow = q[i + 1] || q[i - 1];
+    const map = { ok: [{ status: 'encours', next: 'Envoyer le récapitulatif', due: addDays(NOW, 1) }, 'Répondu'], nrp: [{ status: 'nrp', next: 'Rappeler (NRP)', due: addDays(NOW, 1) }, 'NRP · rappel demain'],
+      later: [{ status: 'rappeler', next: 'Rappeler', due: due || addDays(NOW, 2) }, 'À rappeler'], rdv: [{ status: 'placer', next: 'Trouver un technicien', due: NOW }, 'RDV à placer'], ko: [{ status: 'ko', next: '', due: '' }, 'Pas intéressé → KO'] };
+    const m = map[kind];
+    this.patch([cur.id], m[0], cur.name + ' : ' + m[1], { cur: nextRow ? nextRow.id : null, done: s.done + 1, draft: '' });
+  }
+  queueOf(scope) {
+    const s = this.state; const V = VIEWS.find(v => v[0] === s.view);
+    let q = scope.filter(r => s.step ? INFO[r.status].group === s.step : V[3](r));
+    const prio = r => (r.due && dd(r.due, NOW) < 0 ? 0 : 10) + (r.devisOpened > 0 ? 0 : 5) + (r.due === NOW ? 0 : 3);
+    if (s.sort === 'prio') q = q.sort((a, b) => prio(a) - prio(b) || (a.due < b.due ? -1 : 1));
+    if (s.sort === 'due') q = q.sort((a, b) => (a.due || '9') < (b.due || '9') ? -1 : 1);
+    if (s.sort === 'created') q = q.sort((a, b) => a.created < b.created ? 1 : -1);
+    return q;
+  }
+  renderVals() {
+    const s = this.state; const { scope } = this.list(); const q = this.queueOf(scope);
+    const cur = q.find(r => r.id === s.cur) || null;
+    const dueInfo = r => { if (!r.due) return ['Sans date', '#6E6E73']; const n = dd(r.due, NOW); return n < 0 ? ['En retard de ' + (-n) + ' j', '#C5221F'] : n === 0 ? ['Aujourd’hui', '#B25E00'] : n === 1 ? ['Demain', '#3A3A3C'] : ['Le ' + fmtD(r.due), '#6E6E73']; };
+    const ids = q.map(r => r.id);
+    const move = d => { const i = ids.indexOf(s.cur); const j = Math.max(0, Math.min(ids.length - 1, (i < 0 ? 0 : i + d))); if (ids[j]) this.setState({ cur: ids[j], draft: '' }); };
+    const selIds = Object.keys(s.sel).map(Number);
+    const seg = on => ({ fg: on ? 'var(--primary)' : 'var(--ink-2)', line: on ? 'var(--primary)' : 'transparent', cBg: on ? 'var(--primary)' : 'var(--fill)', cFg: on ? '#fff' : 'var(--ink-2)' });
+    const csv = rows => { const esc = v => '"' + String(v).replace(/"/g, '""') + '"'; const head = ['N°', 'Nom', 'Ville', 'Statut', 'Prochaine action', 'Échéance'];
+      const body = rows.map(r => [r.id, r.name, r.city, INFO[r.status].label, r.next, r.due].map(esc).join(';'));
+      try { const blob = new Blob(['﻿' + [head.map(esc).join(';')].concat(body).join('\r\n')], { type: 'text/csv;charset=utf-8' }); const u = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = u; a.download = 'file-prospects.csv'; document.body.appendChild(a); a.click(); a.remove(); } catch (e) {}
+      this.notify('Export Excel : ' + rows.length + ' lignes'); };
+    let c = {}; let feed = [];
+    if (cur) {
+      const i = INFO[cur.status];
+      c = { id: cur.id, name: cur.name, ini: cur.name.slice(0, 2), city: cur.city, source: cur.source, owner: cur.owner, created: fmtD(cur.created), phone: cur.phone, next: cur.next,
+        status: cur.status, sBg: i.pill[0], sFg: i.pill[1],
+        onStatus: e => { const v = e.target.value; this.patch([cur.id], { status: v }, cur.name + ' → ' + INFO[v].label); },
+        onNext: e => { const v = e.target.value; const over = Object.assign({}, s.over); over[cur.id] = Object.assign({}, over[cur.id], { next: v }); this.setState({ over }); } };
+      const ex = s.extra[cur.id] || {};
+      if (s.tab === 'act') feed = [['Statut : ' + i.label, cur.owner + ' · ' + fmtD(cur.created)], ['Fiche créée (' + cur.source + ')', 'Système · ' + fmtD(cur.created)]].concat((ex.act || []).map(t => [t, 'Aharon · à l’instant'])).reverse().map(x => ({ text: x[0], meta: x[1], bg: 'var(--fill-2)', justify: 'flex-start' }));
+      if (s.tab === 'wa') feed = (cur.wa ? [['in', 'Bonjour, je vous envoie les photos du tableau.'], ['out', 'Merci, bien reçu !']] : []).concat((ex.wa || []).map(t => ['out', t])).map(x => ({ text: x[1], meta: x[0] === 'out' ? 'Envoyé' : 'Reçu', bg: x[0] === 'out' ? '#D9FDD3' : 'var(--fill)', justify: x[0] === 'out' ? 'flex-end' : 'flex-start' }));
+      if (s.tab === 'docs') feed = Array.from({ length: cur.docs }, (x, k) => ({ text: ['Documents landing page.pdf', 'Photos du tableau.jpg', 'Plan du logement.pdf'][k % 3], meta: 'Document', bg: 'var(--tint)', justify: 'flex-start' }));
+      if (s.tab === 'com') feed = Array.from({ length: Math.min(cur.com, 3) }, (x, k) => ({ text: ['Client joignable après 18 h.', 'Souhaite un devis pour le tableau + 3 prises.', 'Message laissé sur répondeur.'][k], meta: ['Raphael', 'Aharon', 'Laura'][k], bg: 'var(--fill-2)', justify: 'flex-start' })).concat((ex.com || []).map(t => ({ text: t, meta: 'Aharon · à l’instant', bg: 'var(--fill-2)', justify: 'flex-start' })));
+    }
+    const viewCounts = VIEWS.map(v => scope.filter(v[3]).length);
+    const VT = VIEWS.find(v => v[0] === s.view);
+    return {
+      q: s.q, onQ: e => this.setState({ q: e.target.value }),
+      type: s.type, onType: e => this.setState({ type: e.target.value }),
+      typeOpts: [['Prospect', 'Prospects'], ['Devis', 'Devis'], ['Facture', 'Factures'], ['Pose', 'Pose'], ['tous', 'Tous les types']].map(x => ({ v: x[0], t: x[1] })),
+      owner: s.owner, onOwner: e => this.setState({ owner: e.target.value }), source: s.source, onSource: e => this.setState({ source: e.target.value }),
+      views: VIEWS.map((v, k) => { const on = !s.step && s.view === v[0]; return { label: v[1], count: viewCounts[k], dot: v[2], bg: on ? 'var(--primary)' : 'transparent', fg: on ? '#fff' : 'var(--ink)', weight: on ? '700' : '500', pick: () => this.setState({ view: v[0], step: '' }) }; }),
+      steps: ST.map(g => { const on = s.step === g[0]; return { label: g[0], count: scope.filter(r => INFO[r.status].group === g[0]).length, icon: ICONS[g[0]], color: on ? '#fff' : g[2][1], bg: on ? 'var(--primary)' : 'transparent', fg: on ? '#fff' : 'var(--ink)', pick: () => this.setState({ step: g[0] }) }; }),
+      doneCount: s.done, donePct: Math.min(100, Math.round(s.done / 20 * 100)) + '%',
+      viewTitle: s.step || VT[1], count: q.length, empty: q.length === 0,
+      sort: s.sort, onSort: e => this.setState({ sort: e.target.value }),
+      allChecked: q.length > 0 && q.every(r => s.sel[r.id]), toggleAll: () => { const all = q.length > 0 && q.every(r => s.sel[r.id]); const sel = {}; if (!all) q.forEach(r => { sel[r.id] = true; }); this.setState({ sel }); },
+      queue: q.map(r => { const i = INFO[r.status]; const di = dueInfo(r); const on = r.id === s.cur; return { name: r.name, city: r.city, next: r.next || 'Aucune action prévue', status: i.label, icon: i.icon, sBg: i.pill[0], sFg: i.pill[1],
+        dueTxt: di[0], dueC: di[1], hot: r.devisOpened > 0, bar: on ? 'var(--primary)' : 'transparent', bg: on ? 'var(--tint)' : 'var(--surface)', checked: !!s.sel[r.id],
+        toggle: () => { const sel = Object.assign({}, s.sel); if (sel[r.id]) delete sel[r.id]; else sel[r.id] = true; this.setState({ sel }); }, pick: () => this.setState({ cur: r.id, draft: '' }) }; }),
+      onKey: e => { const k = e.key; const t = (e.target.tagName || '').toLowerCase(); if (t === 'input' || t === 'select' || t === 'textarea') return;
+        if (k === 'j' || k === 'J' || k === 'ArrowDown') { e.preventDefault(); move(1); } else if (k === 'k' || k === 'K' || k === 'ArrowUp') { e.preventDefault(); move(-1); }
+        else if (k === '1') this.result('ok'); else if (k === '2') this.result('nrp'); else if (k === '3') this.result('later'); else if (k === '4') this.result('rdv'); else if (k === '5') this.result('ko');
+        else if (k === 'w' || k === 'W') this.setState({ tab: 'wa' }); },
+      hasSel: selIds.length > 0, selCount: selIds.length, clearSel: () => this.setState({ sel: {} }),
+      statusOptions: Object.keys(INFO).map(k => ({ k, t: INFO[k].label })),
+      bulkStatus: e => { const v = e.target.value; if (v) this.patch(selIds, { status: v }, selIds.length + ' fiches → ' + INFO[v].label, { sel: {} }); },
+      bulkWa: () => this.notify('WhatsApp groupé à ' + selIds.length + ' fiches (maquette)'),
+      exportSel: () => csv(q.filter(r => s.sel[r.id])), exportList: () => csv(q),
+      hasCur: !!cur, noCur: !cur, c,
+      goWa: () => this.setState({ tab: 'wa' }),
+      results: [['ok', 'Répondu', '→ en cours', '#1C6B3D', '1'], ['nrp', 'NRP', '→ rappel demain', '#48484A', '2'], ['later', 'À rappeler', '→ dans 2 jours', '#B25E00', '3'], ['rdv', 'RDV à placer', '→ trouver un tech', '#1D3FBF', '4'], ['ko', 'Pas intéressé', '→ KO', '#C5221F', '5']]
+        .map(x => ({ label: x[1], sub: x[2], bg: x[3], key: x[4], pick: () => this.result(x[0]) })),
+      dueChips: [['Aujourd’hui', NOW], ['Demain', addDays(NOW, 1)], ['+3 j', addDays(NOW, 3)], ['Lundi', '2026-11-09']].map(x => { const on = cur && cur.due === x[1];
+        return { label: x[0], bg: on ? 'var(--primary)' : 'var(--surface)', fg: on ? '#fff' : 'var(--ink)', pick: () => cur && this.patch([cur.id], { due: x[1] }, 'Relance le ' + fmtD(x[1])) }; }),
+      tabs: cur ? [['act', 'Activité', 0], ['wa', 'WhatsApp', cur.wa], ['docs', 'Documents', cur.docs], ['com', 'Commentaires', cur.com]].map(t => Object.assign({ label: t[1], count: t[2], on: s.tab === t[0], pick: () => this.setState({ tab: t[0], draft: '' }) }, seg(s.tab === t[0]))) : [],
+      feed, draft: s.draft, onDraft: e => this.setState({ draft: e.target.value }),
+      draftPh: s.tab === 'wa' ? 'Message WhatsApp…' : s.tab === 'com' ? 'Ajouter un commentaire…' : s.tab === 'docs' ? 'Nom du document à demander…' : 'Ajouter une note…',
+      sendLabel: s.tab === 'wa' ? 'Envoyer' : 'Ajouter', sendBg: s.tab === 'wa' ? 'var(--wa)' : 'var(--primary)',
+      send: () => { const t = s.draft.trim(); if (!t || !cur) return; const key = s.tab === 'wa' ? 'wa' : s.tab === 'com' ? 'com' : 'act';
+        const extra = Object.assign({}, s.extra); const ex = Object.assign({}, extra[cur.id]); ex[key] = (ex[key] || []).concat([t]); extra[cur.id] = ex;
+        const over = Object.assign({}, s.over); if (key === 'wa') over[cur.id] = Object.assign({}, over[cur.id], { wa: cur.wa + 1 }); if (key === 'com') over[cur.id] = Object.assign({}, over[cur.id], { com: cur.com + 1 });
+        this.setState({ extra, over, draft: '' }); this.notify(key === 'wa' ? 'WhatsApp envoyé (maquette)' : 'Ajouté'); },
+      hasToast: !!s.toast, toastText: s.toast ? s.toast.text : '', toastUndo: !!(s.toast && s.toast.before),
+      undo: () => { const b = s.toast.before; clearTimeout(this.tHide); this.setState({ over: b.over, cur: b.cur, done: b.done, toast: null }); }
+    };
+  }
+}
+
+ARMount(Component);
+</script>
+</body>
+</html>
