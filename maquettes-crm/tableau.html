@@ -273,7 +273,7 @@ class Component extends DCLogic {
     this.setState({ session: Object.assign({}, S, { i: S.i + 1, res }) });
   }
   // Ouvre directement la fiche client complète (lien vers l'écran Fiche)
-  goFiche(id) { this.setState({ menu: null, active: id }); const a = document.getElementById('ar-fiche-link'); if (a) a.click(); }
+  goFiche(id) { this.setState({ menu: null, active: id }); location.href = 'fiche.html#' + id; }
   refresh(silent) {
     const t = new Date(); const at = (t.getHours() < 10 ? '0' : '') + t.getHours() + ':' + (t.getMinutes() < 10 ? '0' : '') + t.getMinutes();
     this.setState({ refreshedAt: at, menu: null });
